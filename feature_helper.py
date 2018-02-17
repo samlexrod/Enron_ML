@@ -8,10 +8,12 @@ def feat_sum(data, new_feature_str, feat_sum_list, absol = True):
     # add a new key to the dictionary and returns it
     # to create a new feature
 
+    absol_name = new_feature_str + '_abs'
     for name in data.keys():
+
         if absol:
             total = sum([abs(data[name][feature]) for feature in feat_sum_list if data[name][feature] <> 'NaN'])
-            new_feature_str = new_feature_str + "_abs"
+            new_feature_str = absol_name
         else:
             total = sum([data[name][feature] for feature in feat_sum_list if data[name][feature] <> 'NaN'])
 
@@ -50,6 +52,9 @@ def feat_ratio(data, features_list, feature_names):
 
     return data
 
+# the function will explore total number of data points, allocation of pois, total features,
+# and missing values of given features
+# features should be entered in this format: [a, b, c, ...]
 def data_explore(data, features):
     print "\nData Exploration:"
     import pandas as pd
@@ -81,7 +86,21 @@ def data_explore(data, features):
     nan_dict_frame = pd.DataFrame(nan_dict_frame)
 
     print nan_dict_frame.sort_values(['values'], ascending=[False])
+    print '-'*50
 
+# the feature prints the data as it was before or after new features
+# it is just to have a cleaner code in the machine_learning_udacity script
+def data_print(data, after=True):
+    from pprint import pprint
+
+    if after:
+        print '\nData Structure After Feature Addition:'
+        pprint(data.values()[0])
+        print '-'*50
+    else:
+        print '\nData Structure Before Feature Addition:'
+        pprint(data.values()[0])
+        print '-'*50
 
 
 

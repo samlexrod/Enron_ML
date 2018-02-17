@@ -107,9 +107,6 @@ sg17
 I2660303
 sg18
 g5
-sS'total_compensation_abs_abs'
-p31
-I35287312
 sg19
 I1200000
 sg20
@@ -128,9 +125,11 @@ sg26
 I6680544
 sg27
 I0
+sg28
+I35287312
 ssS'ELLIOTT STEVEN'
-p32
-(dp33
+p31
+(dp32
 g3
 g5
 sg4
@@ -145,7 +144,7 @@ sg9
 I-400729
 sg10
 S'steven.elliott@enron.com'
-p34
+p33
 sg12
 g5
 sg13
@@ -174,16 +173,15 @@ sg24
 I170941
 sg25
 I211725
-sS'total_compensation_abs_abs_abs'
-p35
-I14582378
 sg26
 I4890344
 sg27
 I0
+sg28
+I14582378
 ssS'CORDES WILLIAM R'
-p36
-(dp37
+p34
+(dp35
 g3
 I764
 sg4
@@ -198,12 +196,9 @@ sg9
 g5
 sg10
 S'bill.cordes@enron.com'
-p38
+p36
 sg12
 g5
-sS'total_compensation_abs_abs_abs_abs'
-p39
-I2076370
 sg13
 g5
 sg14
@@ -234,9 +229,11 @@ sg26
 I651850
 sg27
 F0.0
+sg28
+I2076370
 ssS'HANNON KEVIN P'
-p40
-(dp41
+p37
+(dp38
 g3
 I1045
 sg4
@@ -251,7 +248,7 @@ sg9
 I-3117011
 sg10
 S'kevin.hannon@enron.com'
-p42
+p39
 sg12
 I1617011
 sg13
@@ -266,9 +263,6 @@ sg17
 I11350
 sg18
 g5
-sS'total_compensation_abs_abs_abs_abs_abs'
-p43
-I19593516
 sg19
 I1500000
 sg20
@@ -287,9 +281,11 @@ sg26
 I5538001
 sg27
 F0.65625
+sg28
+I19593516
 ssS'MORDAUNT KRISTINA M'
-p44
-(dp45
+p40
+(dp41
 g3
 g5
 sg4
@@ -304,7 +300,7 @@ sg9
 g5
 sg10
 S'kristina.mordaunt@enron.com'
-p46
+p42
 sg12
 g5
 sg13
@@ -333,16 +329,15 @@ sg24
 I267093
 sg25
 I628522
-sS'total_compensation_abs_abs_abs_abs_abs_abs'
-p47
-I1674064
 sg26
 g5
 sg27
 I0
+sg28
+I1674064
 ssS'MEYER ROCKFORD G'
-p48
-(dp49
+p43
+(dp44
 g3
 I232
 sg4
@@ -357,7 +352,7 @@ sg9
 g5
 sg10
 S'rockford.meyer@enron.com'
-p50
+p45
 sg12
 g5
 sg13
@@ -372,9 +367,6 @@ sg17
 g5
 sg18
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs'
-p51
-I5608200
 sg19
 g5
 sg20
@@ -393,9 +385,11 @@ sg26
 I493489
 sg27
 F0.0
+sg28
+I5608200
 ssS'MCMAHON JEFFREY'
-p52
-(dp53
+p46
+(dp47
 g3
 I2355
 sg4
@@ -410,7 +404,7 @@ sg9
 g5
 sg10
 S'jeffrey.mcmahon@enron.com'
-p54
+p48
 sg12
 I694862
 sg13
@@ -439,16 +433,15 @@ sg24
 I370448
 sg25
 I4099771
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs'
-p55
-I11525252
 sg26
 I1104054
 sg27
 F0.5416666666666666
+sg28
+I11525252
 ssS'HORTON STANLEY C'
-p56
-(dp57
+p49
+(dp50
 g3
 I2350
 sg4
@@ -463,7 +456,7 @@ sg9
 g5
 sg10
 S'stanley.horton@enron.com'
-p58
+p51
 sg12
 g5
 sg13
@@ -480,9 +473,6 @@ sg18
 g5
 sg19
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p59
-I20777016
 sg20
 I7256648
 sg21
@@ -499,9 +489,11 @@ sg26
 I5210569
 sg27
 F0.013979496738117428
+sg28
+I20777016
 ssS'PIPER GREGORY F'
-p60
-(dp61
+p52
+(dp53
 g3
 I1238
 sg4
@@ -510,16 +502,13 @@ sg6
 F0.049273021001615507
 sg7
 I43057
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p62
-I6121612
 sg8
 I00
 sg9
 I-33333
 sg10
 S'greg.piper@enron.com'
-p63
+p54
 sg12
 g5
 sg13
@@ -552,9 +541,11 @@ sg26
 I880290
 sg27
 F0.21621621621621623
+sg28
+I6121612
 ssS'HUMPHREY GENE E'
-p64
-(dp65
+p55
+(dp56
 g3
 I128
 sg4
@@ -569,7 +560,7 @@ sg9
 g5
 sg10
 S'gene.humphrey@enron.com'
-p66
+p57
 sg12
 g5
 sg13
@@ -600,14 +591,13 @@ sg25
 I3100224
 sg26
 I2282768
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p67
-I10765984
 sg27
 F1.0
+sg28
+I10765984
 ssS'UMANOFF ADAM S'
-p68
-(dp69
+p58
+(dp59
 g3
 I111
 sg4
@@ -622,7 +612,7 @@ sg9
 g5
 sg10
 S'adam.umanoff@enron.com'
-p70
+p60
 sg12
 g5
 sg13
@@ -649,18 +639,17 @@ sg23
 g5
 sg24
 I288589
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p71
-I2260922
 sg25
 I1130461
 sg26
 g5
 sg27
 F0.0
+sg28
+I2260922
 ssS'BLACHMAN JEREMY M'
-p72
-(dp73
+p61
+(dp62
 g3
 I2475
 sg4
@@ -675,7 +664,7 @@ sg9
 g5
 sg10
 S'jeremy.blachman@enron.com'
-p74
+p63
 sg12
 I831809
 sg13
@@ -706,14 +695,13 @@ sg25
 I2014835
 sg26
 I765313
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p75
-I5938378
 sg27
 F0.14285714285714285
+sg28
+I5938378
 ssS'SUNDE MARTIN'
-p76
-(dp77
+p64
+(dp65
 g3
 I2647
 sg4
@@ -728,7 +716,7 @@ sg9
 g5
 sg10
 S'marty.sunde@enron.com'
-p78
+p66
 sg12
 I476451
 sg13
@@ -759,14 +747,13 @@ sg25
 I1545059
 sg26
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p79
-I4487958
 sg27
 F0.34210526315789475
+sg28
+I4487958
 ssS'GIBBS DANA R'
-p80
-(dp81
+p67
+(dp68
 g3
 I169
 sg4
@@ -781,7 +768,7 @@ sg9
 g5
 sg10
 S'dana.gibbs@enron.com'
-p82
+p69
 sg12
 I461912
 sg13
@@ -810,16 +797,15 @@ sg24
 g5
 sg25
 I966522
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p83
-I6369594
 sg26
 I2218275
 sg27
 F0.0
+sg28
+I6369594
 ssS'LOWRY CHARLES P'
-p84
-(dp85
+p70
+(dp71
 g3
 g5
 sg4
@@ -864,14 +850,13 @@ sg25
 g5
 sg26
 I372205
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p86
-I1051782
 sg27
 I0
+sg28
+I1051782
 ssS'COLWELL WESLEY'
-p87
-(dp88
+p72
+(dp73
 g3
 I1758
 sg4
@@ -886,12 +871,9 @@ sg9
 I-144062
 sg10
 S'wes.colwell@enron.com'
-p89
+p74
 sg12
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p90
-I4665296
 sg13
 g5
 sg14
@@ -922,9 +904,11 @@ sg26
 g5
 sg27
 F0.275
+sg28
+I4665296
 ssS'MULLER MARK S'
-p91
-(dp92
+p75
+(dp76
 g3
 I136
 sg4
@@ -939,7 +923,7 @@ sg9
 I-719000
 sg10
 S's..muller@enron.com'
-p93
+p77
 sg12
 I1725545
 sg13
@@ -966,18 +950,17 @@ sg23
 I360528
 sg24
 I251654
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p94
-I10675836
 sg25
 I3202070
 sg26
 I1056320
 sg27
 F0.0
+sg28
+I10675836
 ssS'JACKSON CHARLENE R'
-p95
-(dp96
+p78
+(dp79
 g3
 I258
 sg4
@@ -992,7 +975,7 @@ sg9
 g5
 sg10
 S'charlene.jackson@enron.com'
-p97
+p80
 sg12
 g5
 sg13
@@ -1023,14 +1006,13 @@ sg25
 I551174
 sg26
 I185063
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p98
-I2553818
 sg27
 F0.3392857142857143
+sg28
+I2553818
 ssS'WESTFAHL RICHARD K'
-p99
-(dp100
+p81
+(dp82
 g3
 g5
 sg4
@@ -1039,16 +1021,13 @@ sg6
 I0
 sg7
 I51870
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p101
-I2315730
 sg8
 I00
 sg9
 I-10800
 sg10
 S'dick.westfahl@enron.com'
-p102
+p83
 sg12
 I256191
 sg13
@@ -1081,9 +1060,11 @@ sg26
 g5
 sg27
 I0
+sg28
+I2315730
 ssS'WALTERS GARETH W'
-p103
-(dp104
+p84
+(dp85
 g3
 g5
 sg4
@@ -1124,18 +1105,17 @@ sg23
 g5
 sg24
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p105
-I2235478
 sg25
 I87410
 sg26
 I1030329
 sg27
 I0
+sg28
+I2235478
 ssS'WALLS JR ROBERT H'
-p106
-(dp107
+p86
+(dp87
 g3
 I671
 sg4
@@ -1150,7 +1130,7 @@ sg9
 g5
 sg10
 S'rob.walls@enron.com'
-p108
+p88
 sg12
 I540751
 sg13
@@ -1167,9 +1147,6 @@ sg18
 g5
 sg19
 I850000
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p109
-I15395554
 sg20
 I5898997
 sg21
@@ -1186,9 +1163,11 @@ sg26
 I4346544
 sg27
 F0.0
+sg28
+I15395554
 ssS'KITCHEN LOUISE'
-p110
-(dp111
+p89
+(dp90
 g3
 I8305
 sg4
@@ -1203,7 +1182,7 @@ sg9
 g5
 sg10
 S'louise.kitchen@enron.com'
-p112
+p91
 sg12
 g5
 sg13
@@ -1218,9 +1197,6 @@ sg17
 I93925
 sg18
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p113
-I8036568
 sg19
 I3100000
 sg20
@@ -1239,9 +1215,11 @@ sg26
 I81042
 sg27
 F0.11226851851851852
+sg28
+I8036568
 ssS'CHAN RONNIE'
-p114
-(dp115
+p92
+(dp93
 g3
 g5
 sg4
@@ -1272,9 +1250,6 @@ sg18
 I98784
 sg19
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p116
-I262488
 sg20
 g5
 sg21
@@ -1291,9 +1266,11 @@ sg26
 g5
 sg27
 I0
+sg28
+I262488
 ssS'BELFER ROBERT'
-p117
-(dp118
+p94
+(dp95
 g3
 g5
 sg4
@@ -1336,16 +1313,15 @@ sg24
 g5
 sg25
 I102500
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p119
-I299756
 sg26
 I3285
 sg27
 I0
+sg28
+I299756
 ssS'SHANKMAN JEFFREY A'
-p120
-(dp121
+p96
+(dp97
 g3
 I3221
 sg4
@@ -1360,7 +1336,7 @@ sg9
 g5
 sg10
 S'jeffrey.shankman@enron.com'
-p122
+p98
 sg12
 I554422
 sg13
@@ -1391,14 +1367,13 @@ sg25
 I3038702
 sg26
 I1441898
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p123
-I10221474
 sg27
 F0.030958597538232
+sg28
+I10221474
 ssS'WODRASKA JOHN'
-p124
-(dp125
+p99
+(dp100
 g3
 g5
 sg4
@@ -1409,14 +1384,11 @@ sg7
 g5
 sg8
 I00
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p126
-I379166
 sg9
 g5
 sg10
 S'john.wodraska@enron.com'
-p127
+p101
 sg12
 g5
 sg13
@@ -1449,9 +1421,11 @@ sg26
 g5
 sg27
 I0
+sg28
+I379166
 ssS'BERGSIEKER RICHARD P'
-p128
-(dp129
+p102
+(dp103
 g3
 I383
 sg4
@@ -1466,7 +1440,7 @@ sg9
 I-485813
 sg10
 S'rick.bergsieker@enron.com'
-p130
+p104
 sg12
 I180250
 sg13
@@ -1479,9 +1453,6 @@ sg16
 I59
 sg17
 I427316
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p131
-I3527824
 sg18
 g5
 sg19
@@ -1502,9 +1473,11 @@ sg26
 g5
 sg27
 F0.0
+sg28
+I3527824
 ssS'URQUHART JOHN A'
-p132
-(dp133
+p105
+(dp106
 g3
 g5
 sg4
@@ -1539,9 +1512,6 @@ sg20
 g5
 sg21
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p134
-I530644
 sg22
 g5
 sg23
@@ -1554,9 +1524,11 @@ sg26
 g5
 sg27
 I0
+sg28
+I530644
 ssS'BIBI PHILIPPE A'
-p135
-(dp136
+p107
+(dp108
 g3
 I1607
 sg4
@@ -1571,7 +1543,7 @@ sg9
 g5
 sg10
 S'philippe.bibi@enron.com'
-p137
+p109
 sg12
 I369721
 sg13
@@ -1600,16 +1572,15 @@ sg24
 I213625
 sg25
 I2047593
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p138
-I7782818
 sg26
 I1465734
 sg27
 F0.2
+sg28
+I7782818
 ssS'RIEKER PAULA H'
-p139
-(dp140
+p110
+(dp111
 g3
 I1328
 sg4
@@ -1624,7 +1595,7 @@ sg9
 I-100000
 sg10
 S'paula.rieker@enron.com'
-p141
+p112
 sg12
 g5
 sg13
@@ -1651,18 +1622,17 @@ sg23
 I283649
 sg24
 I249201
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p142
-I6235974
 sg25
 I1099100
 sg26
 I1635238
 sg27
 F0.5853658536585366
+sg28
+I6235974
 ssS'WHALEY DAVID A'
-p143
-(dp144
+p113
+(dp114
 g3
 g5
 sg4
@@ -1673,9 +1643,6 @@ sg7
 g5
 sg8
 I00
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p145
-I197436
 sg9
 g5
 sg10
@@ -1712,9 +1679,11 @@ sg26
 I98718
 sg27
 I0
+sg28
+I197436
 ssS'BECK SALLY W'
-p146
-(dp147
+p115
+(dp116
 g3
 I7315
 sg4
@@ -1729,7 +1698,7 @@ sg9
 g5
 sg10
 S'sally.beck@enron.com'
-p148
+p117
 sg12
 g5
 sg13
@@ -1742,9 +1711,6 @@ sg16
 I4343
 sg17
 I566
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p149
-I2190190
 sg18
 g5
 sg19
@@ -1765,16 +1731,15 @@ sg26
 g5
 sg27
 F0.08887865530739121
+sg28
+I2190190
 ssS'HAUG DAVID L'
-p150
-(dp151
+p118
+(dp119
 g3
 I573
 sg4
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p152
-I4435548
 sg6
 F0.006980802792321117
 sg7
@@ -1785,7 +1750,7 @@ sg9
 g5
 sg10
 S'david.haug@enron.com'
-p153
+p120
 sg12
 g5
 sg13
@@ -1818,9 +1783,11 @@ sg26
 g5
 sg27
 F0.3684210526315789
+sg28
+I4435548
 ssS'ECHOLS JOHN B'
-p154
-(dp155
+p121
+(dp122
 g3
 g5
 sg4
@@ -1835,12 +1802,9 @@ sg9
 g5
 sg10
 S'john.echols@enron.com'
-p156
+p123
 sg12
 I2234774
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p157
-I7402530
 sg13
 g5
 sg14
@@ -1871,9 +1835,11 @@ sg26
 I601438
 sg27
 I0
+sg28
+I7402530
 ssS'MENDELSOHN JOHN'
-p158
-(dp159
+p124
+(dp125
 g3
 g5
 sg4
@@ -1890,9 +1856,6 @@ sg10
 g5
 sg12
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p160
-I207796
 sg13
 g5
 sg14
@@ -1923,9 +1886,11 @@ sg26
 g5
 sg27
 I0
+sg28
+I207796
 ssS'HICKERSON GARY J'
-p161
-(dp162
+p126
+(dp127
 g3
 I1320
 sg4
@@ -1936,14 +1901,11 @@ sg7
 I98849
 sg8
 I00
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p163
-I5045784
 sg9
 g5
 sg10
 S'gary.hickerson@enron.com'
-p164
+p128
 sg12
 I69223
 sg13
@@ -1976,9 +1938,11 @@ sg26
 g5
 sg27
 F0.037037037037037035
+sg28
+I5045784
 ssS'CLINE KENNETH W'
-p165
-(dp166
+p129
+(dp130
 g3
 g5
 sg4
@@ -1997,9 +1961,6 @@ sg12
 g5
 sg13
 I-472568
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p167
-I1324172
 sg14
 g5
 sg15
@@ -2028,13 +1989,12 @@ sg26
 g5
 sg27
 I0
+sg28
+I1324172
 ssS'LEWIS RICHARD'
-p168
-(dp169
-S'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p170
-I1700954
-sg3
+p131
+(dp132
+g3
 I952
 sg4
 g5
@@ -2048,7 +2008,7 @@ sg9
 g5
 sg10
 S'richard.lewis@enron.com'
-p171
+p133
 sg12
 g5
 sg13
@@ -2081,9 +2041,11 @@ sg26
 I850477
 sg27
 F0.0
+sg28
+I1700954
 ssS'HAYES ROBERT E'
-p172
-(dp173
+p134
+(dp135
 g3
 I504
 sg4
@@ -2098,12 +2060,9 @@ sg9
 g5
 sg10
 S'robert.hayes@enron.com'
-p174
+p136
 sg12
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p175
-I318758
 sg13
 g5
 sg14
@@ -2134,18 +2093,17 @@ sg26
 g5
 sg27
 F0.0
+sg28
+I318758
 ssS'MCCARTY DANNY J'
-p176
-(dp177
+p137
+(dp138
 g3
 I1433
 sg4
 g5
 sg6
 F0.017445917655268667
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p178
-I1517862
 sg7
 g5
 sg8
@@ -2154,7 +2112,7 @@ sg9
 g5
 sg10
 S'danny.mccarty@enron.com'
-p179
+p139
 sg12
 g5
 sg13
@@ -2187,9 +2145,11 @@ sg26
 I664375
 sg27
 F0.009302325581395349
+sg28
+I1517862
 ssS'KOPPER MICHAEL J'
-p180
-(dp181
+p140
+(dp141
 g3
 g5
 sg4
@@ -2204,7 +2164,7 @@ sg9
 g5
 sg10
 S'michael.kopper@enron.com'
-p182
+p142
 sg12
 I602671
 sg13
@@ -2237,12 +2197,11 @@ sg26
 g5
 sg27
 I0
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p183
+sg28
 I7275288
 ssS'LEFF DANIEL P'
-p184
-(dp185
+p143
+(dp144
 g3
 I2822
 sg4
@@ -2257,7 +2216,7 @@ sg9
 g5
 sg10
 S'dan.leff@enron.com'
-p186
+p145
 sg12
 I1387399
 sg13
@@ -2270,9 +2229,6 @@ sg16
 I63
 sg17
 I3083
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p187
-I6049512
 sg18
 g5
 sg19
@@ -2293,9 +2249,11 @@ sg26
 g5
 sg27
 F0.2222222222222222
+sg28
+I6049512
 ssS'LAVORATO JOHN J'
-p188
-(dp189
+p146
+(dp147
 g3
 I7259
 sg4
@@ -2310,12 +2268,9 @@ sg9
 g5
 sg10
 S'john.lavorato@enron.com'
-p190
+p148
 sg12
 I2035380
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p191
-I31185802
 sg13
 g5
 sg14
@@ -2346,9 +2301,11 @@ sg26
 I4158995
 sg27
 F0.15899419729206962
+sg28
+I31185802
 ssS'BERBERIAN DAVID'
-p192
-(dp193
+p149
+(dp150
 g3
 g5
 sg4
@@ -2363,7 +2320,7 @@ sg9
 g5
 sg10
 S'david.berberian@enron.com'
-p194
+p151
 sg12
 g5
 sg13
@@ -2376,9 +2333,6 @@ sg16
 g5
 sg17
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p195
-I5444180
 sg18
 g5
 sg19
@@ -2399,9 +2353,11 @@ sg26
 I1624396
 sg27
 I0
+sg28
+I5444180
 ssS'DETMERING TIMOTHY J'
-p196
-(dp197
+p152
+(dp153
 g3
 g5
 sg4
@@ -2416,7 +2372,7 @@ sg9
 I-775241
 sg10
 S'timothy.detmering@enron.com'
-p198
+p154
 sg12
 I415657
 sg13
@@ -2441,9 +2397,6 @@ sg22
 g5
 sg23
 I315068
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p199
-I8645514
 sg24
 I210500
 sg25
@@ -2452,9 +2405,11 @@ sg26
 I2027865
 sg27
 I0
+sg28
+I8645514
 ssS'WAKEHAM JOHN'
-p200
-(dp201
+p155
+(dp156
 g3
 g5
 sg4
@@ -2475,9 +2430,6 @@ sg13
 g5
 sg14
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p202
-I426142
 sg15
 g5
 sg16
@@ -2504,9 +2456,11 @@ sg26
 g5
 sg27
 I0
+sg28
+I426142
 ssS'POWERS WILLIAM'
-p203
-(dp204
+p157
+(dp158
 g3
 I653
 sg4
@@ -2521,7 +2475,7 @@ sg9
 I-17500
 sg10
 S'ken.powers@enron.com'
-p205
+p159
 sg12
 g5
 sg13
@@ -2534,9 +2488,6 @@ sg16
 I26
 sg17
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p206
-I35000
 sg18
 I17500
 sg19
@@ -2557,9 +2508,11 @@ sg26
 g5
 sg27
 F0.0
+sg28
+I35000
 ssS'GOLD JOSEPH'
-p207
-(dp208
+p160
+(dp161
 g3
 g5
 sg4
@@ -2574,12 +2527,9 @@ sg9
 g5
 sg10
 S'joe.gold@enron.com'
-p209
+p162
 sg12
 I304805
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p210
-I6049168
 sg13
 g5
 sg14
@@ -2610,9 +2560,11 @@ sg26
 I436515
 sg27
 I0
+sg28
+I6049168
 ssS'BANNANTINE JAMES M'
-p211
-(dp212
+p163
+(dp164
 g3
 I566
 sg4
@@ -2627,12 +2579,9 @@ sg9
 I-5104
 sg10
 S'james.bannantine@enron.com'
-p213
+p165
 sg12
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p214
-I13450020
 sg13
 I-560222
 sg14
@@ -2663,18 +2612,17 @@ sg26
 I4046157
 sg27
 F0.0
+sg28
+I13450020
 ssS'DUNCAN JOHN H'
-p215
-(dp216
+p166
+(dp167
 g3
 g5
 sg4
 g5
 sg6
 I0
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p217
-I948484
 sg7
 g5
 sg8
@@ -2715,9 +2663,11 @@ sg26
 I371750
 sg27
 I0
+sg28
+I948484
 ssS'SHAPIRO RICHARD S'
-p218
-(dp219
+p168
+(dp169
 g3
 I15149
 sg4
@@ -2732,7 +2682,7 @@ sg9
 g5
 sg10
 S'richard.shapiro@enron.com'
-p220
+p170
 sg12
 g5
 sg13
@@ -2753,9 +2703,6 @@ sg20
 I987001
 sg21
 I74
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p221
-I4089098
 sg22
 I65
 sg23
@@ -2768,9 +2715,11 @@ sg26
 I607837
 sg27
 F0.053497942386831275
+sg28
+I4089098
 ssS'SHERRIFF JOHN R'
-p222
-(dp223
+p171
+(dp172
 g3
 I3187
 sg4
@@ -2785,12 +2734,9 @@ sg9
 g5
 sg10
 S'john.sherriff@enron.com'
-p224
+p173
 sg12
 I554422
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p225
-I14928740
 sg13
 g5
 sg14
@@ -2821,18 +2767,17 @@ sg26
 I1835558
 sg27
 F0.25
+sg28
+I14928740
 ssS'SHELBY REX'
-p226
-(dp227
+p174
+(dp175
 g3
 I225
 sg4
 g5
 sg6
 F0.057777777777777775
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p228
-I9003336
 sg7
 I22884
 sg8
@@ -2841,7 +2786,7 @@ sg9
 I-4167
 sg10
 S'rex.shelby@enron.com'
-p229
+p176
 sg12
 g5
 sg13
@@ -2874,9 +2819,11 @@ sg26
 I1624396
 sg27
 F0.358974358974359
+sg28
+I9003336
 ssS'LEMAISTRE CHARLES'
-p230
-(dp231
+p177
+(dp178
 g3
 g5
 sg4
@@ -2893,9 +2840,6 @@ sg10
 g5
 sg12
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p232
-I1050740
 sg13
 g5
 sg14
@@ -2926,18 +2870,17 @@ sg26
 I412878
 sg27
 I0
+sg28
+I1050740
 ssS'DEFFNER JOSEPH M'
-p233
-(dp234
+p179
+(dp180
 g3
 I714
 sg4
 g5
 sg6
 F0.16106442577030813
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p235
-I2735720
 sg7
 I41626
 sg8
@@ -2946,7 +2889,7 @@ sg9
 g5
 sg10
 S'joseph.deffner@enron.com'
-p236
+p181
 sg12
 I335349
 sg13
@@ -2979,9 +2922,11 @@ sg26
 I17378
 sg27
 F0.05405405405405406
+sg28
+I2735720
 ssS'KISHKILL JOSEPH G'
-p237
-(dp238
+p182
+(dp183
 g3
 g5
 sg4
@@ -2996,14 +2941,11 @@ sg9
 I-51042
 sg10
 S'joe.kishkill@enron.com'
-p239
+p184
 sg12
 g5
 sg13
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p240
-I3580568
 sg14
 g5
 sg15
@@ -3032,9 +2974,11 @@ sg26
 g5
 sg27
 I0
+sg28
+I3580568
 ssS'WHALLEY LAWRENCE G'
-p241
-(dp242
+p185
+(dp186
 g3
 I6019
 sg4
@@ -3049,7 +2993,7 @@ sg9
 g5
 sg10
 S'greg.whalley@enron.com'
-p243
+p187
 sg12
 I808346
 sg13
@@ -3062,9 +3006,6 @@ sg16
 I556
 sg17
 I301026
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p244
-I21513422
 sg18
 g5
 sg19
@@ -3085,9 +3026,11 @@ sg26
 I3282960
 sg27
 F0.04316546762589928
+sg28
+I21513422
 ssS'MCCONNELL MICHAEL S'
-p245
-(dp246
+p188
+(dp189
 g3
 I3329
 sg4
@@ -3102,7 +3045,7 @@ sg9
 g5
 sg10
 S'mike.mcconnell@enron.com'
-p247
+p190
 sg12
 I554422
 sg13
@@ -3125,9 +3068,6 @@ sg21
 I92
 sg22
 I194
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p248
-I10405286
 sg23
 I1478269
 sg24
@@ -3138,9 +3078,11 @@ sg26
 I1623010
 sg27
 F0.07075127644055434
+sg28
+I10405286
 ssS'PIRO JIM'
-p249
-(dp250
+p191
+(dp192
 g3
 I58
 sg4
@@ -3155,7 +3097,7 @@ sg9
 g5
 sg10
 S'jim.piro@enron.com'
-p251
+p193
 sg12
 g5
 sg13
@@ -3170,9 +3112,6 @@ sg17
 g5
 sg18
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p252
-I94608
 sg19
 g5
 sg20
@@ -3191,9 +3130,11 @@ sg26
 g5
 sg27
 F0.0625
+sg28
+I94608
 ssS'DELAINEY DAVID W'
-p253
-(dp254
+p194
+(dp195
 g3
 I3093
 sg4
@@ -3202,16 +3143,13 @@ sg6
 F0.02133850630455868
 sg7
 I86174
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p255
-I16724480
 sg8
 I01
 sg9
 g5
 sg10
 S'david.delainey@enron.com'
-p256
+p196
 sg12
 I1294981
 sg13
@@ -3244,9 +3182,11 @@ sg26
 I2291113
 sg27
 F0.198435972629521
+sg28
+I16724480
 ssS'SULLIVAN-SHAKLOVITZ COLLEEN'
-p257
-(dp258
+p197
+(dp198
 g3
 g5
 sg4
@@ -3293,12 +3233,11 @@ sg26
 I1362375
 sg27
 I0
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p259
+sg28
 I4723462
 ssS'WROBEL BRUCE'
-p260
-(dp261
+p199
+(dp200
 g3
 g5
 sg4
@@ -3307,9 +3246,6 @@ sg6
 I0
 sg7
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p262
-I278260
 sg8
 I00
 sg9
@@ -3348,9 +3284,11 @@ sg26
 I139130
 sg27
 I0
+sg28
+I278260
 ssS'LINDHOLM TOD A'
-p263
-(dp264
+p201
+(dp202
 g3
 g5
 sg4
@@ -3365,7 +3303,7 @@ sg9
 g5
 sg10
 S'tod.lindholm@enron.com'
-p265
+p203
 sg12
 I175000
 sg13
@@ -3388,9 +3326,6 @@ sg21
 g5
 sg22
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p266
-I7880194
 sg23
 I514847
 sg24
@@ -3401,9 +3336,11 @@ sg26
 I2549361
 sg27
 I0
+sg28
+I7880194
 ssS'MEYER JEROME J'
-p267
-(dp268
+p204
+(dp205
 g3
 g5
 sg4
@@ -3450,12 +3387,11 @@ sg26
 g5
 sg27
 I0
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p269
+sg28
 I80994
 ssS'LAY KENNETH L'
-p270
-(dp271
+p206
+(dp207
 g3
 I4273
 sg4
@@ -3470,7 +3406,7 @@ sg9
 I-300000
 sg10
 S'kenneth.lay@enron.com'
-p272
+p208
 sg12
 I3600000
 sg13
@@ -3485,9 +3421,6 @@ sg17
 I10359729
 sg18
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p273
-I305939742
 sg19
 I7000000
 sg20
@@ -3506,9 +3439,11 @@ sg26
 I34348384
 sg27
 F0.4444444444444444
+sg28
+I305939742
 ssS'BUTTS ROBERT H'
-p274
-(dp275
+p209
+(dp210
 g3
 g5
 sg4
@@ -3523,7 +3458,7 @@ sg9
 I-75000
 sg10
 S'bob.butts@enron.com'
-p276
+p211
 sg12
 I175000
 sg13
@@ -3552,16 +3487,15 @@ sg24
 I261516
 sg25
 I1271582
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p277
-I3528402
 sg26
 g5
 sg27
 I0
+sg28
+I3528402
 ssS'OLSON CINDY K'
-p278
-(dp279
+p212
+(dp213
 g3
 I1184
 sg4
@@ -3576,12 +3510,9 @@ sg9
 g5
 sg10
 S'cindy.olson@enron.com'
-p280
+p214
 sg12
 I100000
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p281
-I7856640
 sg13
 g5
 sg14
@@ -3612,9 +3543,11 @@ sg26
 I1637034
 sg27
 F0.28846153846153844
+sg28
+I7856640
 ssS'MCDONALD REBECCA'
-p282
-(dp283
+p215
+(dp216
 g3
 I894
 sg4
@@ -3629,7 +3562,7 @@ sg9
 g5
 sg10
 S'rebecca.mcdonald@enron.com'
-p284
+p217
 sg12
 g5
 sg13
@@ -3644,9 +3577,6 @@ sg17
 g5
 sg18
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p285
-I3382732
 sg19
 g5
 sg20
@@ -3665,9 +3595,11 @@ sg26
 I757301
 sg27
 F0.07692307692307693
+sg28
+I3382732
 ssS'CUMBERLAND MICHAEL S'
-p286
-(dp287
+p218
+(dp219
 g3
 g5
 sg4
@@ -3710,16 +3642,15 @@ sg24
 I184899
 sg25
 I807956
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p288
-I2031792
 sg26
 g5
 sg27
 I0
+sg28
+I2031792
 ssS'GAHN ROBERT S'
-p289
-(dp290
+p220
+(dp221
 g3
 g5
 sg4
@@ -3748,9 +3679,6 @@ sg17
 I76547
 sg18
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p291
-I2440468
 sg19
 I509870
 sg20
@@ -3769,9 +3697,11 @@ sg26
 I83237
 sg27
 I0
+sg28
+I2440468
 ssS'MCCLELLAN GEORGE'
-p292
-(dp293
+p222
+(dp223
 g3
 I1744
 sg4
@@ -3786,7 +3716,7 @@ sg9
 I-125000
 sg10
 S'george.mcclellan@enron.com'
-p294
+p224
 sg12
 g5
 sg13
@@ -3815,16 +3745,15 @@ sg24
 I263413
 sg25
 I1318763
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p295
-I4783248
 sg26
 I506765
 sg27
 F0.0
+sg28
+I4783248
 ssS'HERMANN ROBERT J'
-p296
-(dp297
+p225
+(dp226
 g3
 g5
 sg4
@@ -3839,7 +3768,7 @@ sg9
 I-280000
 sg10
 S'robert.hermann@enron.com'
-p298
+p227
 sg12
 I150000
 sg13
@@ -3856,9 +3785,6 @@ sg18
 g5
 sg19
 I700000
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p299
-I4491186
 sg20
 I668132
 sg21
@@ -3875,9 +3801,11 @@ sg26
 I187500
 sg27
 I0
+sg28
+I4491186
 ssS'SCRIMSHAW MATTHEW'
-p300
-(dp301
+p228
+(dp229
 g3
 g5
 sg4
@@ -3886,16 +3814,13 @@ sg6
 I0
 sg7
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p302
-I1519114
 sg8
 I00
 sg9
 g5
 sg10
 S'matthew.scrimshaw@enron.com'
-p303
+p230
 sg12
 g5
 sg13
@@ -3928,9 +3853,11 @@ sg26
 I759557
 sg27
 I0
+sg28
+I1519114
 ssS'GATHMANN WILLIAM D'
-p304
-(dp305
+p231
+(dp232
 g3
 g5
 sg4
@@ -3975,14 +3902,13 @@ sg25
 g5
 sg26
 I1753766
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p306
-I4035558
 sg27
 I0
+sg28
+I4035558
 ssS'HAEDICKE MARK E'
-p307
-(dp308
+p233
+(dp234
 g3
 I4009
 sg4
@@ -3997,7 +3923,7 @@ sg9
 I-934484
 sg10
 S'mark.haedicke@enron.com'
-p309
+p235
 sg12
 I983346
 sg13
@@ -4024,18 +3950,17 @@ sg23
 I524169
 sg24
 I374125
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p310
-I11852936
 sg25
 I3859065
 sg26
 I608750
 sg27
 F0.03142709943328181
+sg28
+I11852936
 ssS'BOWEN JR RAYMOND M'
-p311
-(dp312
+p236
+(dp237
 g3
 I1858
 sg4
@@ -4050,7 +3975,7 @@ sg9
 I-833
 sg10
 S'raymond.bowen@enron.com'
-p313
+p238
 sg12
 I974293
 sg13
@@ -4081,14 +4006,13 @@ sg25
 I2669589
 sg26
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p314
-I5844954
 sg27
 F0.5555555555555556
+sg28
+I5844954
 ssS'GILLIS JOHN'
-p315
-(dp316
+p239
+(dp240
 g3
 g5
 sg4
@@ -4097,9 +4021,6 @@ sg6
 I0
 sg7
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p317
-I171282
 sg8
 I00
 sg9
@@ -4138,9 +4059,11 @@ sg26
 I9803
 sg27
 I0
+sg28
+I171282
 ssS'FITZGERALD JAY L'
-p318
-(dp319
+p241
+(dp242
 g3
 I936
 sg4
@@ -4155,7 +4078,7 @@ sg9
 g5
 sg10
 S'jay.fitzgerald@enron.com'
-p320
+p243
 sg12
 I556416
 sg13
@@ -4184,16 +4107,15 @@ sg24
 I199157
 sg25
 I1414857
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p321
-I6072186
 sg26
 I664461
 sg27
 F0.5
+sg28
+I6072186
 ssS'MORAN MICHAEL P'
-p322
-(dp323
+p244
+(dp245
 g3
 I672
 sg4
@@ -4208,7 +4130,7 @@ sg9
 g5
 sg10
 S'michael.moran@enron.com'
-p324
+p246
 sg12
 g5
 sg13
@@ -4239,14 +4161,13 @@ sg25
 g5
 sg26
 I59539
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p325
-I442282
 sg27
 F0.0
+sg28
+I442282
 ssS'REDMOND BRIAN L'
-p326
-(dp327
+p247
+(dp248
 g3
 I1671
 sg4
@@ -4261,12 +4182,9 @@ sg9
 g5
 sg10
 S'brian.redmond@enron.com'
-p328
+p249
 sg12
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p329
-I16003706
 sg13
 g5
 sg14
@@ -4297,9 +4215,11 @@ sg26
 I7509039
 sg27
 F0.22171945701357465
+sg28
+I16003706
 ssS'BAZELIDES PHILIP J'
-p330
-(dp331
+p250
+(dp251
 g3
 g5
 sg4
@@ -4340,18 +4260,17 @@ sg23
 g5
 sg24
 I80818
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p332
-I4919554
 sg25
 I860136
 sg26
 I1599641
 sg27
 I0
+sg28
+I4919554
 ssS'BELDEN TIMOTHY N'
-p333
-(dp334
+p252
+(dp253
 g3
 I7991
 sg4
@@ -4366,7 +4285,7 @@ sg9
 I-2334434
 sg10
 S'tim.belden@enron.com'
-p335
+p254
 sg12
 g5
 sg13
@@ -4387,9 +4306,6 @@ sg20
 I1110705
 sg21
 I228
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p336
-I17893538
 sg22
 I108
 sg23
@@ -4402,9 +4318,11 @@ sg26
 I953136
 sg27
 F0.2231404958677686
+sg28
+I17893538
 ssS'DURAN WILLIAM D'
-p337
-(dp338
+p255
+(dp256
 g3
 I904
 sg4
@@ -4413,16 +4331,13 @@ sg6
 F0.1172566371681416
 sg7
 I25785
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p339
-I7468346
 sg8
 I00
 sg9
 g5
 sg10
 S'w.duran@enron.com'
-p340
+p257
 sg12
 I1105218
 sg13
@@ -4455,9 +4370,11 @@ sg26
 I1451869
 sg27
 F0.25
+sg28
+I7468346
 ssS'THORN TERENCE H'
-p341
-(dp342
+p258
+(dp259
 g3
 I266
 sg4
@@ -4472,7 +4389,7 @@ sg9
 g5
 sg10
 S'terence.thorn@enron.com'
-p343
+p260
 sg12
 I200000
 sg13
@@ -4499,18 +4416,17 @@ sg23
 I365320
 sg24
 I222093
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p344
-I11458498
 sg25
 I911453
 sg26
 I4452476
 sg27
 F0.0
+sg28
+I11458498
 ssS'FASTOW ANDREW S'
-p345
-(dp346
+p261
+(dp262
 g3
 g5
 sg4
@@ -4525,7 +4441,7 @@ sg9
 I-1386055
 sg10
 S'andrew.fastow@enron.com'
-p347
+p263
 sg12
 I1736055
 sg13
@@ -4542,9 +4458,6 @@ sg18
 g5
 sg19
 I1300000
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p348
-I11209100
 sg20
 I1794412
 sg21
@@ -4561,9 +4474,11 @@ sg26
 g5
 sg27
 I0
+sg28
+I11209100
 ssS'FOY JOE'
-p349
-(dp350
+p264
+(dp265
 g3
 I57
 sg4
@@ -4578,7 +4493,7 @@ sg9
 g5
 sg10
 S'tracy.foy@enron.com'
-p351
+p266
 sg12
 g5
 sg13
@@ -4593,9 +4508,6 @@ sg17
 g5
 sg18
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p352
-I1050378
 sg19
 g5
 sg20
@@ -4614,9 +4526,11 @@ sg26
 I343434
 sg27
 F0.0
+sg28
+I1050378
 ssS'CALGER CHRISTOPHER F'
-p353
-(dp354
+p267
+(dp268
 g3
 I2598
 sg4
@@ -4631,7 +4545,7 @@ sg9
 I-262500
 sg10
 S'christopher.calger@enron.com'
-p355
+p269
 sg12
 I375304
 sg13
@@ -4648,9 +4562,6 @@ sg18
 g5
 sg19
 I1250000
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p356
-I4055648
 sg20
 I126027
 sg21
@@ -4667,9 +4578,11 @@ sg26
 g5
 sg27
 F0.1736111111111111
+sg28
+I4055648
 ssS'RICE KENNETH D'
-p357
-(dp358
+p270
+(dp271
 g3
 I905
 sg4
@@ -4684,7 +4597,7 @@ sg9
 I-3504386
 sg10
 S'ken.rice@enron.com'
-p359
+p272
 sg12
 I1617011
 sg13
@@ -4713,16 +4626,15 @@ sg24
 I420636
 sg25
 I505050
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p360
-I53103950
 sg26
 I19794175
 sg27
 F0.2222222222222222
+sg28
+I53103950
 ssS'KAMINSKI WINCENTY J'
-p361
-(dp362
+p273
+(dp274
 g3
 I4607
 sg4
@@ -4737,7 +4649,7 @@ sg9
 g5
 sg10
 S'vince.kaminski@enron.com'
-p363
+p275
 sg12
 I323466
 sg13
@@ -4768,14 +4680,13 @@ sg25
 I1086821
 sg26
 I850010
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p364
-I4125716
 sg27
 F0.011901447661469933
+sg28
+I4125716
 ssS'LOCKHART EUGENE E'
-p365
-(dp366
+p276
+(dp277
 g3
 g5
 sg4
@@ -4786,9 +4697,6 @@ sg7
 g5
 sg8
 I00
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p367
-I0
 sg9
 g5
 sg10
@@ -4825,9 +4733,11 @@ sg26
 g5
 sg27
 I0
+sg28
+I0
 ssS'COX DAVID'
-p368
-(dp369
+p278
+(dp279
 g3
 I102
 sg4
@@ -4842,7 +4752,7 @@ sg9
 I-41250
 sg10
 S'chip.cox@enron.com'
-p370
+p280
 sg12
 g5
 sg13
@@ -4859,9 +4769,6 @@ sg18
 g5
 sg19
 I800000
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p371
-I3276552
 sg20
 I495633
 sg21
@@ -4878,9 +4785,11 @@ sg26
 I117551
 sg27
 F0.12121212121212122
+sg28
+I3276552
 ssS'OVERDYKE JR JERE C'
-p372
-(dp373
+p281
+(dp282
 g3
 g5
 sg4
@@ -4895,7 +4804,7 @@ sg9
 g5
 sg10
 S'jere.overdyke@enron.com'
-p374
+p283
 sg12
 I135836
 sg13
@@ -4916,9 +4825,6 @@ sg20
 I7307594
 sg21
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p375
-I15114762
 sg22
 g5
 sg23
@@ -4931,9 +4837,11 @@ sg26
 I5266578
 sg27
 I0
+sg28
+I15114762
 ssS'PEREIRA PAULO V. FERRAZ'
-p376
-(dp377
+p284
+(dp285
 g3
 g5
 sg4
@@ -4976,16 +4884,15 @@ sg24
 g5
 sg25
 I27942
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p378
-I258384
 sg26
 g5
 sg27
 I0
+sg28
+I258384
 ssS'STABLER FRANK'
-p379
-(dp380
+p286
+(dp287
 g3
 g5
 sg4
@@ -5000,7 +4907,7 @@ sg9
 g5
 sg10
 S'frank.stabler@enron.com'
-p381
+p288
 sg12
 g5
 sg13
@@ -5027,18 +4934,17 @@ sg23
 I511734
 sg24
 I239502
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p382
-I3247642
 sg25
 I1112087
 sg26
 g5
 sg27
 I0
+sg28
+I3247642
 ssS'SKILLING JEFFREY K'
-p383
-(dp384
+p289
+(dp290
 g3
 I3627
 sg4
@@ -5049,14 +4955,11 @@ sg7
 I29336
 sg8
 I01
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p385
-I69552776
 sg9
 g5
 sg10
 S'jeff.skilling@enron.com'
-p386
+p291
 sg12
 I1920000
 sg13
@@ -5089,9 +4992,11 @@ sg26
 I19250000
 sg27
 F0.2777777777777778
+sg28
+I69552776
 ssS'BLAKE JR. NORMAN P'
-p387
-(dp388
+p292
+(dp293
 g3
 g5
 sg4
@@ -5118,9 +5023,6 @@ sg16
 g5
 sg17
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p389
-I230126
 sg18
 I113784
 sg19
@@ -5141,16 +5043,15 @@ sg26
 g5
 sg27
 I0
+sg28
+I230126
 ssS'SHERRICK JEFFREY B'
-p390
-(dp391
+p294
+(dp295
 g3
 I613
 sg4
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p392
-I3664936
 sg6
 F0.0636215334420881
 sg7
@@ -5161,7 +5062,7 @@ sg9
 g5
 sg10
 S'jeffrey.sherrick@enron.com'
-p393
+p296
 sg12
 g5
 sg13
@@ -5194,9 +5095,11 @@ sg26
 I1426469
 sg27
 F0.72
+sg28
+I3664936
 ssS'PRENTICE JAMES'
-p394
-(dp395
+p297
+(dp298
 g3
 g5
 sg4
@@ -5211,12 +5114,9 @@ sg9
 g5
 sg10
 S'james.prentice@enron.com'
-p396
+p299
 sg12
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p397
-I3318776
 sg13
 g5
 sg14
@@ -5247,9 +5147,11 @@ sg26
 I886231
 sg27
 I0
+sg28
+I3318776
 ssS'GRAY RODNEY'
-p398
-(dp399
+p300
+(dp301
 g3
 g5
 sg4
@@ -5266,9 +5168,6 @@ sg10
 g5
 sg12
 I365625
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p400
-I2293316
 sg13
 g5
 sg14
@@ -5299,9 +5198,11 @@ sg26
 g5
 sg27
 I0
+sg28
+I2293316
 ssS'PICKERING MARK R'
-p401
-(dp402
+p302
+(dp303
 g3
 I898
 sg4
@@ -5312,14 +5213,11 @@ sg7
 I31653
 sg8
 I00
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p403
-I2830976
 sg9
 g5
 sg10
 S'mark.pickering@enron.com'
-p404
+p304
 sg12
 g5
 sg13
@@ -5352,9 +5250,11 @@ sg26
 I28798
 sg27
 F0.0
+sg28
+I2830976
 ssS'THE TRAVEL AGENCY IN THE PARK'
-p405
-(dp406
+p305
+(dp306
 g3
 g5
 sg4
@@ -5373,9 +5273,6 @@ sg12
 g5
 sg13
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p407
-I724192
 sg14
 g5
 sg15
@@ -5404,13 +5301,12 @@ sg26
 g5
 sg27
 I0
+sg28
+I724192
 ssS'NOLES JAMES L'
-p408
-(dp409
-S'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p410
-I2475324
-sg3
+p307
+(dp308
+g3
 g5
 sg4
 I774401
@@ -5456,9 +5352,11 @@ sg26
 g5
 sg27
 I0
+sg28
+I2475324
 ssS'KEAN STEVEN J'
-p411
-(dp412
+p309
+(dp310
 g3
 I12754
 sg4
@@ -5473,12 +5371,9 @@ sg9
 g5
 sg10
 S'steven.kean@enron.com'
-p413
+p311
 sg12
 I300000
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p414
-I15802328
 sg13
 g5
 sg14
@@ -5509,18 +5404,17 @@ sg26
 I2022048
 sg27
 F0.05725699067909454
+sg28
+I15802328
 ssS'FOWLER PEGGY'
-p415
-(dp416
+p312
+(dp313
 g3
 I517
 sg4
 g5
 sg6
 F0.0
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p417
-I3769496
 sg7
 g5
 sg8
@@ -5529,7 +5423,7 @@ sg9
 g5
 sg10
 S'kulvinder.fowler@enron.com'
-p418
+p314
 sg12
 g5
 sg13
@@ -5562,9 +5456,11 @@ sg26
 I1324578
 sg27
 F0.0
+sg28
+I3769496
 ssS'WASAFF GEORGE'
-p419
-(dp420
+p315
+(dp316
 g3
 I400
 sg4
@@ -5579,7 +5475,7 @@ sg9
 I-583325
 sg10
 S'george.wasaff@enron.com'
-p421
+p317
 sg12
 I200000
 sg13
@@ -5612,12 +5508,11 @@ sg26
 I1668260
 sg27
 F0.23333333333333334
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p422
+sg28
 I7348294
 ssS'WHITE JR THOMAS E'
-p423
-(dp424
+p318
+(dp319
 g3
 g5
 sg4
@@ -5632,7 +5527,7 @@ sg9
 g5
 sg10
 S'thomas.white@enron.com'
-p425
+p320
 sg12
 g5
 sg13
@@ -5645,9 +5540,6 @@ sg16
 g5
 sg17
 I1085463
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p426
-I34156964
 sg18
 g5
 sg19
@@ -5668,9 +5560,11 @@ sg26
 I1297049
 sg27
 I0
+sg28
+I34156964
 ssS'CHRISTODOULOU DIOMEDES'
-p427
-(dp428
+p321
+(dp322
 g3
 g5
 sg4
@@ -5685,12 +5579,9 @@ sg9
 g5
 sg10
 S'diomedes.christodoulou@enron.com'
-p429
+p323
 sg12
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p430
-I12155770
 sg13
 g5
 sg14
@@ -5721,9 +5612,11 @@ sg26
 I5127155
 sg27
 I0
+sg28
+I12155770
 ssS'ALLEN PHILLIP K'
-p431
-(dp432
+p324
+(dp325
 g3
 I2902
 sg4
@@ -5738,7 +5631,7 @@ sg9
 I-3081055
 sg10
 S'phillip.allen@enron.com'
-p433
+p326
 sg12
 I304805
 sg13
@@ -5751,9 +5644,6 @@ sg16
 I2195
 sg17
 I152
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p434
-I18842130
 sg18
 g5
 sg19
@@ -5774,9 +5664,11 @@ sg26
 I1729541
 sg27
 F0.029612756264236904
+sg28
+I18842130
 ssS'SHARP VICTORIA T'
-p435
-(dp436
+p327
+(dp328
 g3
 I3136
 sg4
@@ -5791,7 +5683,7 @@ sg9
 g5
 sg10
 S'vicki.sharp@enron.com'
-p437
+p329
 sg12
 I422158
 sg13
@@ -5816,9 +5708,6 @@ sg22
 I6
 sg23
 I213063
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p438
-I4141294
 sg24
 I248146
 sg25
@@ -5827,9 +5716,11 @@ sg26
 I281073
 sg27
 F0.04411764705882353
+sg28
+I4141294
 ssS'JAEDICKE ROBERT'
-p439
-(dp440
+p330
+(dp331
 g3
 g5
 sg4
@@ -5850,9 +5741,6 @@ sg13
 I-44093
 sg14
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p441
-I1169186
 sg15
 g5
 sg16
@@ -5879,9 +5767,11 @@ sg26
 I431750
 sg27
 I0
+sg28
+I1169186
 ssS'WINOKUR JR. HERBERT S'
-p442
-(dp443
+p332
+(dp333
 g3
 g5
 sg4
@@ -5908,9 +5798,6 @@ sg16
 g5
 sg17
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p444
-I219984
 sg18
 I108579
 sg19
@@ -5931,9 +5818,11 @@ sg26
 g5
 sg27
 I0
+sg28
+I219984
 ssS'BROWN MICHAEL'
-p445
-(dp446
+p334
+(dp335
 g3
 I1486
 sg4
@@ -5948,12 +5837,9 @@ sg9
 g5
 sg10
 S'michael.brown@enron.com'
-p447
+p336
 sg12
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p448
-I98576
 sg13
 g5
 sg14
@@ -5984,9 +5870,11 @@ sg26
 g5
 sg27
 F0.024390243902439025
+sg28
+I98576
 ssS'BADUM JAMES P'
-p449
-(dp450
+p337
+(dp338
 g3
 g5
 sg4
@@ -6003,9 +5891,6 @@ sg10
 g5
 sg12
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p451
-I880566
 sg13
 g5
 sg14
@@ -6036,18 +5921,17 @@ sg26
 I257817
 sg27
 I0
+sg28
+I880566
 ssS'HUGHES JAMES A'
-p452
-(dp453
+p339
+(dp340
 g3
 I719
 sg4
 g5
 sg6
 F0.048678720445062586
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p454
-I2236788
 sg7
 g5
 sg8
@@ -6056,7 +5940,7 @@ sg9
 g5
 sg10
 S'james.hughes@enron.com'
-p455
+p341
 sg12
 g5
 sg13
@@ -6089,9 +5973,11 @@ sg26
 I754966
 sg27
 F0.14705882352941177
+sg28
+I2236788
 ssS'REYNOLDS LAWRENCE'
-p456
-(dp457
+p342
+(dp343
 g3
 g5
 sg4
@@ -6126,9 +6012,6 @@ sg20
 I4221891
 sg21
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p458
-I9913260
 sg22
 g5
 sg23
@@ -6141,9 +6024,11 @@ sg26
 I4160672
 sg27
 I0
+sg28
+I9913260
 ssS'DIMICHELE RICHARD G'
-p459
-(dp460
+p344
+(dp345
 g3
 g5
 sg4
@@ -6158,12 +6043,9 @@ sg9
 g5
 sg10
 S'richard.dimichele@enron.com'
-p461
+p346
 sg12
 I694862
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p462
-I21371866
 sg13
 g5
 sg14
@@ -6194,18 +6076,17 @@ sg26
 I8191755
 sg27
 I0
+sg28
+I21371866
 ssS'BHATNAGAR SANJAY'
-p463
-(dp464
+p347
+(dp348
 g3
 I523
 sg4
 g5
 sg6
 F0.0
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p465
-I36397288
 sg7
 g5
 sg8
@@ -6214,7 +6095,7 @@ sg9
 g5
 sg10
 S'sanjay.bhatnagar@enron.com'
-p466
+p349
 sg12
 g5
 sg13
@@ -6232,9 +6113,9 @@ I137864
 sg19
 g5
 sS'total_stock_value'
-p467
+p350
 S'NaN'
-p468
+p351
 sg21
 I0
 sg22
@@ -6249,9 +6130,11 @@ sg26
 I2604490
 sg27
 F0.034482758620689655
+sg28
+I36397288
 ssS'CARTER REBECCA C'
-p469
-(dp470
+p352
+(dp353
 g3
 I312
 sg4
@@ -6266,12 +6149,9 @@ sg9
 I-159792
 sg10
 S'rebecca.carter@enron.com'
-p471
+p354
 sg12
 I75000
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p472
-I1889300
 sg13
 I-307301
 sg14
@@ -6302,18 +6182,17 @@ sg26
 g5
 sg27
 F0.4666666666666667
+sg28
+I1889300
 ssS'BUCHANAN HAROLD G'
-p473
-(dp474
+p355
+(dp356
 g3
 I1088
 sg4
 g5
 sg6
 F0.0
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p475
-I4138284
 sg7
 I600
 sg8
@@ -6322,7 +6201,7 @@ sg9
 g5
 sg10
 S'john.buchanan@enron.com'
-p476
+p357
 sg12
 I304805
 sg13
@@ -6355,9 +6234,11 @@ sg26
 I825464
 sg27
 F0.0
+sg28
+I4138284
 ssS'YEAP SOON'
-p477
-(dp478
+p358
+(dp359
 g3
 g5
 sg4
@@ -6376,9 +6257,6 @@ sg12
 g5
 sg13
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p479
-I495710
 sg14
 g5
 sg15
@@ -6407,9 +6285,11 @@ sg26
 I192758
 sg27
 I0
+sg28
+I495710
 ssS'MURRAY JULIA H'
-p480
-(dp481
+p360
+(dp361
 g3
 I2192
 sg4
@@ -6424,7 +6304,7 @@ sg9
 g5
 sg10
 S'julia.murray@enron.com'
-p482
+p362
 sg12
 I125000
 sg13
@@ -6437,9 +6317,6 @@ sg16
 I45
 sg17
 I330
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p483
-I2819310
 sg18
 g5
 sg19
@@ -6460,9 +6337,11 @@ sg26
 I400478
 sg27
 F0.044444444444444446
+sg28
+I2819310
 ssS'GARLAND C KEVIN'
-p484
-(dp485
+p363
+(dp364
 g3
 I209
 sg4
@@ -6477,7 +6356,7 @@ sg9
 g5
 sg10
 S'kevin.garland@enron.com'
-p486
+p365
 sg12
 I375304
 sg13
@@ -6500,9 +6379,6 @@ sg21
 I10
 sg22
 I27
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p487
-I4925244
 sg23
 I259907
 sg24
@@ -6513,9 +6389,11 @@ sg26
 I636246
 sg27
 F0.6136363636363636
+sg28
+I4925244
 ssS'DODSON KEITH'
-p488
-(dp489
+p366
+(dp367
 g3
 I176
 sg4
@@ -6530,7 +6408,7 @@ sg9
 g5
 sg10
 S'keith.dodson@enron.com'
-p490
+p368
 sg12
 g5
 sg13
@@ -6545,9 +6423,6 @@ sg17
 I774
 sg18
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p491
-I639882
 sg19
 I70000
 sg20
@@ -6566,9 +6441,11 @@ sg26
 g5
 sg27
 F0.21428571428571427
+sg28
+I639882
 ssS'YEAGER F SCOTT'
-p492
-(dp493
+p369
+(dp370
 g3
 g5
 sg4
@@ -6577,16 +6454,13 @@ sg6
 I0
 sg7
 I53947
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p494
-I24490116
 sg8
 I01
 sg9
 g5
 sg10
 S'scott.yeager@enron.com'
-p495
+p371
 sg12
 g5
 sg13
@@ -6619,9 +6493,11 @@ sg26
 I8308552
 sg27
 I0
+sg28
+I24490116
 ssS'HIRKO JOSEPH'
-p496
-(dp497
+p372
+(dp373
 g3
 g5
 sg4
@@ -6636,7 +6512,7 @@ sg9
 g5
 sg10
 S'joe.hirko@enron.com'
-p498
+p374
 sg12
 g5
 sg13
@@ -6669,12 +6545,11 @@ sg26
 I30766064
 sg27
 I0
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p499
+sg28
 I61714314
 ssS'DIETRICH JANET R'
-p500
-(dp501
+p375
+(dp376
 g3
 I2572
 sg4
@@ -6683,16 +6558,13 @@ sg6
 F0.11858475894245724
 sg7
 I3475
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p502
-I6551102
 sg8
 I00
 sg9
 g5
 sg10
 S'janet.dietrich@enron.com'
-p503
+p377
 sg12
 I556416
 sg13
@@ -6725,9 +6597,11 @@ sg26
 I1550019
 sg27
 F0.2222222222222222
+sg28
+I6551102
 ssS'DERRICK JR. JAMES V'
-p504
-(dp505
+p378
+(dp379
 g3
 I2181
 sg4
@@ -6742,7 +6616,7 @@ sg9
 I-1284000
 sg10
 S'james.derrick@enron.com'
-p506
+p380
 sg12
 I484000
 sg13
@@ -6765,9 +6639,6 @@ sg21
 I64
 sg22
 I20
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p507
-I24908548
 sg23
 I1787380
 sg24
@@ -6778,9 +6649,11 @@ sg26
 I8831913
 sg27
 F0.022002200220022004
+sg28
+I24908548
 ssS'FREVERT MARK A'
-p508
-(dp509
+p381
+(dp382
 g3
 I3275
 sg4
@@ -6795,7 +6668,7 @@ sg9
 I-3367011
 sg10
 S'mark.frevert@enron.com'
-p510
+p383
 sg12
 I1617011
 sg13
@@ -6828,12 +6701,11 @@ sg26
 I10433518
 sg27
 F0.2857142857142857
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p511
+sg28
 I70483452
 ssS'PAI LOU L'
-p512
-(dp513
+p384
+(dp385
 g3
 g5
 sg4
@@ -6848,7 +6720,7 @@ sg9
 g5
 sg10
 S'lou.pai@enron.com'
-p514
+p386
 sg12
 g5
 sg13
@@ -6863,9 +6735,6 @@ sg17
 I1829457
 sg18
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p515
-I53882626
 sg19
 I1000000
 sg20
@@ -6884,9 +6753,11 @@ sg26
 I15364167
 sg27
 I0
+sg28
+I53882626
 ssS'BAY FRANKLIN R'
-p516
-(dp517
+p387
+(dp388
 g3
 g5
 sg4
@@ -6901,7 +6772,7 @@ sg9
 I-201641
 sg10
 S'frank.bay@enron.com'
-p518
+p389
 sg12
 g5
 sg13
@@ -6930,16 +6801,15 @@ sg24
 I239671
 sg25
 I827696
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p519
-I2350266
 sg26
 g5
 sg27
 I0
+sg28
+I2350266
 ssS'HAYSLETT RODERICK J'
-p520
-(dp521
+p390
+(dp391
 g3
 I2649
 sg4
@@ -6954,12 +6824,9 @@ sg9
 g5
 sg10
 S'rod.hayslett@enron.com'
-p522
+p392
 sg12
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p523
-I693326
 sg13
 g5
 sg14
@@ -6990,9 +6857,11 @@ sg26
 g5
 sg27
 F0.03581526861451461
+sg28
+I693326
 ssS'FUGH JOHN L'
-p524
-(dp525
+p393
+(dp394
 g3
 g5
 sg4
@@ -7021,9 +6890,6 @@ sg17
 g5
 sg18
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p526
-I453938
 sg19
 g5
 sg20
@@ -7042,9 +6908,11 @@ sg26
 I176378
 sg27
 I0
+sg28
+I453938
 ssS'FALLON JAMES B'
-p527
-(dp528
+p395
+(dp396
 g3
 I1755
 sg4
@@ -7059,7 +6927,7 @@ sg9
 g5
 sg10
 S'jim.fallon@enron.com'
-p529
+p397
 sg12
 I374347
 sg13
@@ -7088,16 +6956,15 @@ sg24
 I304588
 sg25
 I3676340
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p530
-I12017478
 sg26
 I940257
 sg27
 F0.49333333333333335
+sg28
+I12017478
 ssS'KOENIG MARK E'
-p531
-(dp532
+p398
+(dp399
 g3
 I2374
 sg4
@@ -7112,7 +6979,7 @@ sg9
 g5
 sg10
 S'mark.koenig@enron.com'
-p533
+p400
 sg12
 I300000
 sg13
@@ -7127,9 +6994,6 @@ sg17
 I150458
 sg18
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p534
-I7014952
 sg19
 I700000
 sg20
@@ -7148,9 +7012,11 @@ sg26
 I671737
 sg27
 F0.2459016393442623
+sg28
+I7014952
 ssS'SAVAGE FRANK'
-p535
-(dp536
+p401
+(dp402
 g3
 g5
 sg4
@@ -7193,16 +7059,15 @@ sg24
 g5
 sg25
 I3750
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p537
-I250068
 sg26
 g5
 sg27
 I0
+sg28
+I250068
 ssS'IZZO LAWRENCE L'
-p538
-(dp539
+p403
+(dp404
 g3
 I496
 sg4
@@ -7217,7 +7082,7 @@ sg9
 g5
 sg10
 S'larry.izzo@enron.com'
-p540
+p405
 sg12
 I312500
 sg13
@@ -7234,9 +7099,6 @@ sg18
 g5
 sg19
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p541
-I15599152
 sg20
 I5819980
 sg21
@@ -7253,9 +7115,11 @@ sg26
 I2165172
 sg27
 F0.2631578947368421
+sg28
+I15599152
 ssS'TILNEY ELIZABETH A'
-p542
-(dp543
+p406
+(dp407
 g3
 I460
 sg4
@@ -7264,16 +7128,13 @@ sg6
 F0.021739130434782608
 sg7
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p544
-I4284870
 sg8
 I00
 sg9
 I-575000
 sg10
 S'elizabeth.tilney@enron.com'
-p545
+p408
 sg12
 I275000
 sg13
@@ -7306,9 +7167,11 @@ sg26
 I591250
 sg27
 F0.5789473684210527
+sg28
+I4284870
 ssS'MARTIN AMANDA K'
-p546
-(dp547
+p409
+(dp410
 g3
 I1522
 sg4
@@ -7323,7 +7186,7 @@ sg9
 g5
 sg10
 S'a..martin@enron.com'
-p548
+p411
 sg12
 I5145434
 sg13
@@ -7354,14 +7217,13 @@ sg25
 I8407016
 sg26
 I2070306
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p549
-I20954644
 sg27
 F0.0
+sg28
+I20954644
 ssS'BUY RICHARD B'
-p550
-(dp551
+p412
+(dp413
 g3
 I3523
 sg4
@@ -7376,7 +7238,7 @@ sg9
 I-694862
 sg10
 S'rick.buy@enron.com'
-p552
+p414
 sg12
 I769862
 sg13
@@ -7403,18 +7265,17 @@ sg23
 I901657
 sg24
 I330546
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p553
-I12990068
 sg25
 I2355702
 sg26
 I2542813
 sg27
 F0.06742640075973409
+sg28
+I12990068
 ssS'GRAMM WENDY L'
-p554
-(dp555
+p415
+(dp416
 g3
 g5
 sg4
@@ -7459,14 +7320,13 @@ sg25
 I119292
 sg26
 g5
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p556
-I238584
 sg27
 I0
+sg28
+I238584
 ssS'CAUSEY RICHARD A'
-p557
-(dp558
+p417
+(dp418
 g3
 I1892
 sg4
@@ -7475,16 +7335,13 @@ sg6
 F0.0306553911205074
 sg7
 I30674
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p559
-I9211642
 sg8
 I01
 sg9
 I-235000
 sg10
 S'richard.causey@enron.com'
-p560
+p419
 sg12
 I350000
 sg13
@@ -7517,9 +7374,11 @@ sg26
 g5
 sg27
 F0.24489795918367346
+sg28
+I9211642
 ssS'TAYLOR MITCHELL S'
-p561
-(dp562
+p420
+(dp421
 g3
 I533
 sg4
@@ -7534,7 +7393,7 @@ sg9
 g5
 sg10
 S'mitchell.taylor@enron.com'
-p563
+p422
 sg12
 g5
 sg13
@@ -7563,16 +7422,15 @@ sg24
 I265214
 sg25
 I1092663
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p564
-I9675422
 sg26
 I3181250
 sg27
 F0.0
+sg28
+I9675422
 ssS'DONAHUE JR JEFFREY M'
-p565
-(dp566
+p423
+(dp424
 g3
 I865
 sg4
@@ -7587,7 +7445,7 @@ sg9
 I-300000
 sg10
 S'jeff.donahue@enron.com'
-p567
+p425
 sg12
 g5
 sg13
@@ -7618,14 +7476,13 @@ sg25
 I875760
 sg26
 I765920
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p568
-I4513496
 sg27
 F0.5
+sg28
+I4513496
 ssS'GLISAN JR BEN F'
-p569
-(dp570
+p426
+(dp427
 g3
 I873
 sg4
@@ -7640,12 +7497,9 @@ sg9
 g5
 sg10
 S'ben.glisan@enron.com'
-p571
+p428
 sg12
 I71023
-sS'total_compensation_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs_abs'
-p572
-I4101660
 sg13
 g5
 sg14
@@ -7676,4 +7530,6 @@ sg26
 I384728
 sg27
 F0.375
+sg28
+I4101660
 ss.

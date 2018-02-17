@@ -3,4 +3,8 @@ S'poi'
 p1
 aS'salary'
 p2
+aS'from_message_impact'
+p3
+aS'to_messages_impact'
+p4
 a.
