@@ -72,7 +72,7 @@ data_print(data_dict, after=True)
 # Store to my_dataset for easy export below.
 my_dataset = data_dict
 
-data_explore(my_dataset, financial_features)
+data_explore(my_dataset, my_dataset.values()[0].keys())
 
 # Extract features and labels from dataset for local testing
 data = featureFormat(my_dataset, features_list, sort_keys = True)
