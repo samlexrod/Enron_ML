@@ -10,7 +10,7 @@ from tester import dump_classifier_and_data
 from sklearn.naive_bayes import GaussianNB
 from sklearn.cross_validation import train_test_split
 from pprint import pprint
-from new_feature import feat_combine
+from feature_helper import feat_sum, feat_ratio, data_explore
 
 # sys.path.append("../tools/")
 
@@ -45,6 +45,7 @@ pop_list = ['TOTAL']
 pop_selected(pop_list, features_available, data_dict)
 
 # Task 3: Create new feature(s)
+print '\nData Structure Before Feature Addition:'
 pprint(data_dict.values()[0])
 
 financial_features = ['salary', 'deferral_payments', 'total_payments', 'loan_advances',
@@ -52,19 +53,21 @@ financial_features = ['salary', 'deferral_payments', 'total_payments', 'loan_adv
                       'expenses', 'exercised_stock_options', 'other', 'long_term_incentive',
                       'restricted_stock', 'director_fees']
 
+ratio_email_features = [['from_this_person_to_poi', 'from_messages'],
+                        ['from_poi_to_this_person', 'to_messages']]
+
+feat_ratio(data_dict, ratio_email_features, ['from_message_impact', 'to_messages_impact'])
+
 feat_sum(data_dict, 'total_compensation', financial_features)
 
 # Store to my_dataset for easy export below.
 my_dataset = data_dict
 
 # validating additional feature(s)
+print '\nData Structure After Addition:'
 pprint(my_dataset.values()[0])
 
-# printing stats
-print "\nTotal Number of Data Points:", len(my_dataset.keys())
-print "Allocation of POI Accross Dataset:", "{:0.2f}%".format(np.sum([1.0 for i in my_dataset.values()
-              if i['poi'] == True])/len(my_dataset.keys())*100)
-print "Total Features:", len(my_dataset[my_dataset.keys()[0]])
+data_explore(my_dataset, financial_features)
 
 # Extract features and labels from dataset for local testing
 data = featureFormat(my_dataset, features_list, sort_keys = True)
