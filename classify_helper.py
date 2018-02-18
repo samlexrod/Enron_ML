@@ -16,7 +16,7 @@ def classify(classifier, my_dataset, final_features, fine_tune=False, parameters
     labels, features = targetFeatureSplit(data)
 
     features_train, features_test, labels_train, labels_test = \
-        train_test_split(features, labels, test_size=0.3, random_state=0)
+        train_test_split(features, labels, test_size=0.3, random_state=42)
 
     # Assigning Classifier
     clf = classifier
@@ -112,7 +112,7 @@ def auto_feature(classifier, my_dataset, features_for_testing, initial_features,
         labels, features = targetFeatureSplit(data)
 
         features_train, features_test, labels_train, labels_test = \
-            train_test_split(features, labels, test_size=0.3, random_state=0)
+            train_test_split(features, labels, test_size=0.3, random_state=42)
 
         return features_train, features_test, labels_train, labels_test
 
