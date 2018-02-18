@@ -11,12 +11,8 @@ from sklearn.model_selection import GridSearchCV
 def classify(classifier, my_dataset, final_features, fine_tune=False, parameters={}, tune_size=1):
 
     # Extracting Data
-    data = featureFormat(my_dataset, final_features, sort_keys=True)
-    data = feature_scaling(classifier, data)
-    labels, features = targetFeatureSplit(data)
-
     features_train, features_test, labels_train, labels_test = \
-        train_test_split(features, labels, test_size=0.3, random_state=42)
+        data_extract(classifier, my_dataset, final_features)
 
     # Assigning Classifier
     clf = classifier
@@ -75,48 +71,45 @@ def grid_search(classifier, train_data, parameters):
     t = time()
     clf.fit(train_data[0], train_data[1])
     train_time = min_sec(time(), t)
-    # pprint(clf.cv_results_)
+
     print "Time to find best parameters: " \
         "{:.0f} minute(s) and {:0.0f} second(s)".format(train_time[0], train_time[1])
     print "-"*50
 
     print "Best parameters are:"
     pprint(clf.best_params_)
-    # pprint(clf.best_estimator_)
-    # pprint(clf.best_score_)
-    # pprint(clf.best_index_)
-    # pprint(clf.scorer_)
-    # pprint(clf.n_splits_)
 
 def feature_scaling(classifier, data):
     classifier_name = str(classifier)[0:str(classifier).find('(')]
     if classifier_name == 'SVC' or classifier_name == 'KMean':
         from sklearn.preprocessing import MinMaxScaler
+        print "Feature Scaling..."
         scaler = MinMaxScaler()
         data = scaler.fit_transform(data)
         return data
     return data
 
+# the feature will extract data in labels and features
+def data_extract(classifier, my_dataset, testing_features):
+
+    data = featureFormat(my_dataset, testing_features, sort_keys=True)
+    # data = feature_scaling(classifier, data)
+    labels, features = targetFeatureSplit(data)
+
+    features_train, features_test, labels_train, labels_test = \
+        train_test_split(features, labels, test_size=0.3, random_state=42)
+
+    return features_train, features_test, labels_train, labels_test
 
 # features_for_testing and initial_features should be in the following format: [a, b, c...]
 def auto_feature(classifier, my_dataset, features_for_testing, initial_features, show=False):
-
+    print "Finding automatic features..."
     testing_features = [feature for feature in initial_features]
     removed_features = []
     score_tracker = []
 
-    def data_extract():
-        data = featureFormat(my_dataset, testing_features, sort_keys=True)
-        if show: print '\nFeature Scaling...'
-        data = feature_scaling(classifier, data)
-        labels, features = targetFeatureSplit(data)
-
-        features_train, features_test, labels_train, labels_test = \
-            train_test_split(features, labels, test_size=0.3, random_state=42)
-
-        return features_train, features_test, labels_train, labels_test
-
-    features_train, features_test, labels_train, labels_test = data_extract()
+    features_train, features_test, labels_train, labels_test = \
+        data_extract(classifier, my_dataset, testing_features)
 
     # conducting first test of initial features before iteration
     clf = classifier
@@ -140,7 +133,8 @@ def auto_feature(classifier, my_dataset, features_for_testing, initial_features,
         testing_features.append(feature)
 
         # fitting the model
-        features_train, features_test, labels_train, labels_test = data_extract()
+        features_train, features_test, labels_train, labels_test = \
+            data_extract(classifier, my_dataset, testing_features)
         clf.fit(features_train, labels_train)
         pred = clf.predict(features_test)
         score = clf.score(features_test, labels_test)

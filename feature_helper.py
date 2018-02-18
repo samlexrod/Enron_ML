@@ -88,6 +88,22 @@ def data_explore(data, features):
     print nan_dict_frame.sort_values(['miss_values'], ascending=[False])
     print '-'*50
 
+def nan_handler(my_dataset):
+
+    features = my_dataset.values()[0].keys()
+    names = my_dataset.keys()
+
+    # replacing null values to zero float values
+    for name in names:
+        for feature in features:
+            if my_dataset[name][feature] == 'NaN':
+                my_dataset[name][feature] = 0.
+
+    return my_dataset
+
+
+
+
 # the feature prints the data as it was before or after new features
 # it is just to have a cleaner code in the machine_learning_udacity script
 def data_print(data, after=True):

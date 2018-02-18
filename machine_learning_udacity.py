@@ -6,7 +6,7 @@ import pickle
 from outlier_manage import outlier_dict, pop_selected
 from tester import dump_classifier_and_data, test_classifier
 from sklearn.naive_bayes import GaussianNB
-from feature_helper import feat_sum, feat_ratio, data_explore, data_print
+from feature_helper import feat_sum, feat_ratio, data_explore, data_print, nan_handler
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from classify_helper import classify, auto_feature
@@ -70,7 +70,14 @@ data_print(data_dict, after=True)
 # Store to my_dataset for easy export below.
 my_dataset = data_dict
 
-data_explore(my_dataset, my_dataset.values()[0].keys())
+all_features = my_dataset.values()[0].keys()
+
+data_explore(my_dataset, all_features)
+
+# Converting null to zero value
+nan_handler(my_dataset)
+
+data_explore(my_dataset, all_features)
 
 # Extract features and labels from dataset for local testing
 # Task 4: Try a varity of classifiers
@@ -88,7 +95,7 @@ features_for_testing.remove('email_address')
 initial_features = ['poi', 'salary']
 
 final_features_SVC = auto_feature(SVC(kernel='rbf'),
-                                  my_dataset, features_for_testing, initial_features)
+                                  my_dataset, features_for_testing, initial_features, show=True)
 final_features_NB = auto_feature(GaussianNB(),
                                  my_dataset, features_for_testing, initial_features)
 final_features_DT = auto_feature(DecisionTreeClassifier(),
@@ -105,12 +112,12 @@ final_features_FR = auto_feature(RandomForestClassifier(),
 # http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.StratifiedShuffleSplit.html
 # Example starting point. Try investigating other evaluation techniques!
 
-parameters = {'kernel': ['linear', 'rbf'], 'C': [1, 10], 'gamma': [0, 0.1]}
+parameters = {'kernel': ['poly', 'rbf'], 'C': [1, 10], 'gamma': [0.001, 0.1]}
 classify(SVC(), my_dataset, final_features_SVC, fine_tune=False, parameters=parameters, tune_size= .40)
 classify(SVC(kernel='rbf',
              C=1,
              gamma=0.01),
-         my_dataset, final_features_SVC, fine_tune=False, parameters=parameters, tune_size= .40)
+         my_dataset, final_features_SVC, fine_tune=True, parameters=parameters, tune_size= .40)
 
 # Task 6: Dump your classifier, dataset, and features_list so anyone can
 # check your results. You do not need to change anything below, but make sure
