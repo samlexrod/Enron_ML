@@ -3,17 +3,13 @@
 # imports
 import sys
 import pickle
-import numpy as np
 from outlier_manage import outlier_dict, pop_selected
-from feature_format import featureFormat, targetFeatureSplit
-from tester import dump_classifier_and_data
+from tester import dump_classifier_and_data, test_classifier
 from sklearn.naive_bayes import GaussianNB
-from sklearn.cross_validation import train_test_split
-from pprint import pprint
 from feature_helper import feat_sum, feat_ratio, data_explore, data_print
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
-from classify_helper import classify
+from classify_helper import classify, auto_feature
 
 # sys.path.append("../tools/")
 
@@ -27,11 +23,13 @@ sys.path.append(path)
 # Task 1: Select what features you'll use
 # features_list is a list of strings, each of which is a feature name.
 # The first feature must be "poi".
-features_list = ['poi','salary', 'from_message_impact', 'to_messages_impact'] # You will need to use more features
+features_list1 = ['poi','salary', 'from_message_impact', 'to_messages_impact'] # You will need to use more features
 
 features_list2 = ['poi', 'total_compensation_abs', 'from_message_impact', 'to_messages_impact']
 
-features_list3 = []
+features_list3 = ['poi', 'salary']
+
+features_lists = [features_list1, features_list2, features_list3]
 
 # Load the dictionary containing the dataset
 with open("final_project_dataset.pkl", "r") as data_file:
@@ -75,29 +73,29 @@ my_dataset = data_dict
 data_explore(my_dataset, my_dataset.values()[0].keys())
 
 # Extract features and labels from dataset for local testing
-data = featureFormat(my_dataset, features_list, sort_keys = True)
-labels, features = targetFeatureSplit(data)
-
-
 # Task 4: Try a varity of classifiers
 # Please name your classifier clf for easy export below.
 # Note that if you want to do PCA or other multi-stage operations,
 # you'll need to use Pipelines. For more info:
 # http://scikit-learn.org/stable/modules/pipeline.html
 
-features_train, features_test, labels_train, labels_test = \
-    train_test_split(features, labels, test_size=0.3, random_state=42)
+# preparing the features to add to test for better score
+features_for_testing = my_dataset.values()[0].keys()
+features_for_testing.remove('salary')
+features_for_testing.remove('poi')
+features_for_testing.remove('email_address')
 
-#classify(GaussianNB(), [features_train, labels_train], [features_test, labels_test])
+initial_features = ['poi', 'salary']
 
-parameters = {'kernel': ('linear', 'rbf'), 'C': [1, 10]}
-
-classify(SVC(), [features_train, labels_train], [features_test, labels_test], fine_tune=False, parameters=parameters)
-
-classify(SVC(C=10000,  kernel='rbf', gamma=2000), [features_train, labels_train], [features_test, labels_test])
-
-#classify(DecisionTreeClassifier(), [features_train, labels_train], [features_test, labels_test])
-
+final_features_SVC = auto_feature(SVC(kernel='rbf'),
+                                  my_dataset, features_for_testing, initial_features)
+final_features_NB = auto_feature(GaussianNB(),
+                                 my_dataset, features_for_testing, initial_features)
+final_features_DT = auto_feature(DecisionTreeClassifier(),
+                                 my_dataset, features_for_testing, initial_features, show=False)
+from sklearn.ensemble import RandomForestClassifier
+final_features_FR = auto_feature(RandomForestClassifier(),
+                                 my_dataset, features_for_testing, initial_features, show=False)
 
 # Task 5: Tune your classifier to achieve better than .3 precision and recall
 # using our testing script. Check the tester.py script in the final project
@@ -107,7 +105,12 @@ classify(SVC(C=10000,  kernel='rbf', gamma=2000), [features_train, labels_train]
 # http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.StratifiedShuffleSplit.html
 # Example starting point. Try investigating other evaluation techniques!
 
-
+parameters = {'kernel': ['linear', 'rbf'], 'C': [1, 10], 'gamma': [0, 0.1]}
+classify(SVC(), my_dataset, final_features_SVC, fine_tune=False, parameters=parameters, tune_size= .40)
+classify(SVC(kernel='rbf',
+             C=1,
+             gamma=0.01),
+         my_dataset, final_features_SVC, fine_tune=False, parameters=parameters, tune_size= .40)
 
 # Task 6: Dump your classifier, dataset, and features_list so anyone can
 # check your results. You do not need to change anything below, but make sure
@@ -116,6 +119,20 @@ classify(SVC(C=10000,  kernel='rbf', gamma=2000), [features_train, labels_train]
 
 # selected classifier
 
-clf = GaussianNB()
+print "\nStarting test..."
+clf_DT = DecisionTreeClassifier()
+test_classifier(clf_DT, my_dataset, final_features_DT)
 
-dump_classifier_and_data(clf, my_dataset, features_list)
+clf_RF = RandomForestClassifier()
+test_classifier(clf_RF, my_dataset, final_features_FR)
+
+clf_NB = GaussianNB()
+test_classifier(clf_NB, my_dataset, final_features_NB)
+
+clf_SVC = SVC()
+test_classifier(clf_SVC, my_dataset, final_features_SVC)
+
+
+#features_final = final_features_SVC
+#dump_classifier_and_data(clf, my_dataset, features_final)
+

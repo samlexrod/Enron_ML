@@ -79,13 +79,13 @@ def data_explore(data, features):
 
     nan_dict_frame = {}
     nan_dict_frame['features'] = nan_dict.keys()
-    nan_dict_frame['values'] = nan_dict.values()
+    nan_dict_frame['miss_values'] = nan_dict.values()
     nan_dict_frame['percentage'] = ["{:0.2f}".format(float(value)/len(data.keys())*100)
                                     for value in nan_dict.values()]
 
     nan_dict_frame = pd.DataFrame(nan_dict_frame)
 
-    print nan_dict_frame.sort_values(['values'], ascending=[False])
+    print nan_dict_frame.sort_values(['miss_values'], ascending=[False])
     print '-'*50
 
 # the feature prints the data as it was before or after new features
