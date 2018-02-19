@@ -20,10 +20,12 @@ def feat_sum(data, new_feature_str, feat_sum_list, absol = True):
         data[name][new_feature_str] = total
 
         # validating aggregation
-        # print "Compare to: ", [(feature, data[name][feature]) for feature in feat_sum_list]
-        # print "Analyze negative: ", [(feature, data[name][feature]) for feature in feat_sum_list \
+        '''
+        print "Compare to: ", [(feature, data[name][feature]) for feature in feat_sum_list]
+        print "Analyze negative: ", [(feature, data[name][feature]) for feature in feat_sum_list \
                                      # if data[name][feature] < 0]
-        # print "Returning:", data[name][new_feature_str]
+        print "Returning:", data[name][new_feature_str]
+        '''
 
     return data
 

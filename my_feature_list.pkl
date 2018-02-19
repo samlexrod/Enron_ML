@@ -5,6 +5,10 @@ aS'salary'
 p2
 aS'to_messages'
 p3
-aS'restricted_stock'
+aS'to_messages_impact'
 p4
+aS'restricted_stock'
+p5
+aS'exercised_stock_options'
+p6
 a.
