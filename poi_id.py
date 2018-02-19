@@ -153,8 +153,8 @@ print "-"*50
 optimal_features = ['poi', 'salary', 'to_messages', 'to_messages_impact', 'restricted_stock', 'exercised_stock_options']
 second_optimal_features = ['poi', 'salary', 'deferred_income', 'exercised_stock_options']
 
-print optimal_features
 print "Final Selection"
+print optimal_features
 for i in range(0, 2):
     test_classifier(clf_DT_clean, my_dataset, optimal_features)
 print "-"*50
