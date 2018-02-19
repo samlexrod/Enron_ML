@@ -30,25 +30,30 @@ def feat_sum(data, new_feature_str, feat_sum_list, absol = True):
 # the function will calculate the ratio of given combination of values, nominator and denominator
 # the feature_list should be entered in this format [[a, b], [c, d]]
 # the name of the new feature should be entered in this format: [a, b]
-def feat_ratio(data, features_list, feature_names):
+def feat_ratio(data, features_lists, feature_names):
     for name in data.keys():
-        # validating ratio
-        # print [(nominator, denominator) for (nominator, denominator) in features_list]
-        # print name, [(data[name][nominator], data[name][denominator]) for (nominator, denominator) in features_list]
 
-        ratio = [float(data[name][nominator])/float(data[name][denominator])
-                 for (nominator, denominator) in features_list
-                     if data[name][nominator] <> 'NaN' or data[name][denominator] <> 'NaN']
-        if ratio == []: ratio = [0, 0]
+        # Calculating the ratio
+        feat_name_index = 0
+        for features_list in features_lists:
+            nominator = features_list[0]
+            denominator = features_list[1]
 
-        # print 'ratio', ratio # testing ratio
+            if data[name][nominator] == 'NaN' or data[name][denominator] == 'NaN':
+                data[name][feature_names[feat_name_index]] = 0.
+            elif data[name][nominator] == 0 or data[name][denominator] == 0:
+                data[name][feature_names[feat_name_index]] = 0.
+            else:
+                data[name][feature_names[feat_name_index]] = float(data[name][nominator])/float(data[name][denominator])
 
-        for i in range(len(feature_names)):
-            # print feature_names[i], ratio[i]
-            data[name][feature_names[i]] = ratio[i]
+            # Validating the calculations
+            '''
+            print name, feature_names[feat_name_index], \
+                data[name][feature_names[feat_name_index]], "<-",\
+                (data[name][nominator], data[name][denominator])
+            '''
 
-        # print data[name][feature_names[0]] # testing ratio
-        # print data[name][feature_names[1]] # testing ratio
+            feat_name_index += 1
 
     return data
 
@@ -98,7 +103,6 @@ def nan_handler(my_dataset):
         for feature in features:
             if my_dataset[name][feature] == 'NaN':
                 my_dataset[name][feature] = 0.
-
     return my_dataset
 
 

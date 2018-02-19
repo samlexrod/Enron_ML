@@ -8,6 +8,17 @@ from sklearn.model_selection import GridSearchCV
 # this function trains the data and find best parameters when fine_tune is True
 # train_data and test_data should be in this format: [features, labels]
 # parameters should be a dictionary of parameters: {'kernel': ('linear', 'rgf') 'C': [1, 10]}
+
+PERF_FORMAT_STRING = "\
+\tAccuracy: {:>0.{display_precision}f}\tPrecision: {:>0.{display_precision}f}\t\
+Recall: {:>0.{display_precision}f}\tF1: {:>0.{display_precision}f}\tF2: {:>0.{display_precision}f}"
+RESULTS_FORMAT_STRING = "\tTotal predictions: {:4d}\tTrue positives: {:4d}\tFalse positives: {:4d}\
+\tFalse negatives: {:4d}\tTrue negatives: {:4d}"
+SIZE_AND_TIME_STRING = "\tDataset Size: {:>0.{dec_points}f}\t Reduced Dataset: {:>0.{dec_points}f}\n\t\
+Time to fit: {:0.0f} minute(s) and {:0.0f} second(s)\t\
+Time to score: {:0.0f} minute(s) and {:0.0f} second(s)\nPredictions:"
+
+
 def classify(classifier, my_dataset, final_features, fine_tune=False, parameters={}, tune_size=1):
 
     # Extracting Data
@@ -34,17 +45,36 @@ def classify(classifier, my_dataset, final_features, fine_tune=False, parameters
     accuracy = clf.score(features_test, labels_test)
     score_time = min_sec(time(), t)
 
+    true_positives = sum([1 for predicted, actual in zip(pred, labels_test)
+                          if predicted == actual and predicted == 1])
+    true_negatives = sum([1 for predicted, actual in zip(pred, labels_test)
+                          if predicted == actual and predicted == 0])
+    false_positives = sum([1 for predicted, actual in zip(pred, labels_test)
+                           if predicted <> actual and predicted == 1])
+    false_negatives = sum([1 for predicted, actual in zip(pred, labels_test)
+                           if predicted <> actual and predicted == 0])
+
+
+    # My version of test_classifier without the Stratified ShuffleSplit
+    total_predictions = true_positives + true_negatives + false_positives + false_negatives
+    accuracy_manual = 1.0*(true_positives + true_negatives)/total_predictions
+    try: precision = 1.0*true_positives/(true_positives+false_positives)
+    except: precision = 0
+    recall = 1.0 * true_positives / (true_positives + false_negatives)
+    f1 = 2.0 * true_positives / (2 * true_positives + false_positives + false_negatives)
+    try: f2 = (1 + 2.0 * 2.0) * precision * recall / (4 * precision + recall)
+    except: f2 = 0
     # Statistics
     print "\nSelected classifier:", str(classifier)[0:str(classifier).find('(')]
+    print "**No StratifiedShuffleSplit applied here <-"
     print clf
-    print "Size of dataset: {} data points".format(int(len(features_train)))
-    print "Size of reduced dataset: {} data points".format(int(len(features_train)*tune_size))
-    print "Accuracy Score:", "{:0.2%}".format(accuracy)
-    print "Time to fit the model: {:0.0f} minute(s) and {:0.0f} second(s)"\
-        .format(fit_time[0], fit_time[1])
-    print "Time to score the training: {:0.0f} minute(s) and {:0.0f} second(s)"\
-        .format(score_time[0], score_time[1])
-    print "Predictions:"
+    print PERF_FORMAT_STRING.format(accuracy, precision, recall, f1, f2, display_precision=5)
+    print RESULTS_FORMAT_STRING.format(total_predictions, true_positives, false_positives, false_negatives,
+                                       true_negatives)
+    print SIZE_AND_TIME_STRING.format(int(len(features_train)),
+                                                   int(len(features_train)*tune_size),
+                                                   fit_time[0], fit_time[1],
+                                                   score_time[0], score_time[1], dec_points=0)
     print pred
     print '-'*50
 
@@ -74,16 +104,17 @@ def grid_search(classifier, train_data, parameters):
 
     print "Time to find best parameters: " \
         "{:.0f} minute(s) and {:0.0f} second(s)".format(train_time[0], train_time[1])
-    print "-"*50
 
     print "Best parameters are:"
     pprint(clf.best_params_)
+
+    print "-" * 50
 
 def feature_scaling(classifier, data):
     classifier_name = str(classifier)[0:str(classifier).find('(')]
     if classifier_name == 'SVC' or classifier_name == 'KMean':
         from sklearn.preprocessing import MinMaxScaler
-        print "Feature Scaling..."
+        print "Applying Feature Scaling..."
         scaler = MinMaxScaler()
         data = scaler.fit_transform(data)
         return data
@@ -93,7 +124,7 @@ def feature_scaling(classifier, data):
 def data_extract(classifier, my_dataset, testing_features):
 
     data = featureFormat(my_dataset, testing_features, sort_keys=True)
-    # data = feature_scaling(classifier, data)
+    data = feature_scaling(classifier, data)
     labels, features = targetFeatureSplit(data)
 
     features_train, features_test, labels_train, labels_test = \
@@ -158,9 +189,9 @@ def auto_feature(classifier, my_dataset, features_for_testing, initial_features,
 
     # final user info
     print "\nType of classifier:", str(classifier)[0:str(classifier).find('(')]
-    print "Features kept:"
-    pprint(testing_features)
+    print "Copy: features_kept = {}".format(testing_features)
     print "Final score: {:0.2%}".format(max(score_tracker))
+    print "Pred:", pred
     print "-"*50
 
     final_features = testing_features

@@ -59,10 +59,18 @@ financial_features = ['salary', 'deferral_payments', 'total_payments', 'loan_adv
 
 ratio_email_features = [['from_this_person_to_poi', 'from_messages'],
                         ['from_poi_to_this_person', 'to_messages']]
-
 feat_ratio(data_dict, ratio_email_features, ['from_message_impact', 'to_messages_impact'])
 
 feat_sum(data_dict, 'total_compensation', financial_features)
+
+x = []
+for name in data_dict.keys():
+    if data_dict[name]['salary'] == 0:
+        idiot_name = name
+        x.append((data_dict[name]['salary'], data_dict[name]['total_compensation_abs']))
+
+ratio_financial_features = [['salary', 'total_compensation_abs']]
+feat_ratio(data_dict, ratio_financial_features, ['salary_impact'])
 
 # validating additional feature(s)
 data_print(data_dict, after=True)
@@ -94,8 +102,11 @@ features_for_testing.remove('email_address')
 
 initial_features = ['poi', 'salary']
 
-final_features_SVC = auto_feature(SVC(kernel='rbf'),
-                                  my_dataset, features_for_testing, initial_features, show=True)
+
+# Searching for Potential Classifier
+#final_features_SVC = auto_feature(SVC(),
+                                  #my_dataset, features_for_testing, initial_features, show=False)
+
 final_features_NB = auto_feature(GaussianNB(),
                                  my_dataset, features_for_testing, initial_features)
 final_features_DT = auto_feature(DecisionTreeClassifier(),
@@ -112,34 +123,50 @@ final_features_FR = auto_feature(RandomForestClassifier(),
 # http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.StratifiedShuffleSplit.html
 # Example starting point. Try investigating other evaluation techniques!
 
-parameters = {'kernel': ['poly', 'rbf'], 'C': [1, 10], 'gamma': [0.001, 0.1]}
-classify(SVC(), my_dataset, final_features_SVC, fine_tune=False, parameters=parameters, tune_size= .40)
-classify(SVC(kernel='rbf',
-             C=1,
-             gamma=0.01),
-         my_dataset, final_features_SVC, fine_tune=True, parameters=parameters, tune_size= .40)
+# Unselected Classifier due to Failing Evaluation Metrics
+# parameters_SVC = {'kernel': ['poly', 'rbf'], 'C': [1, 10], 'gamma': [0.001, 0.1]}
+# classify(SVC(), my_dataset, final_features_SVC, fine_tune=False, parameters=parameters_SVC, tune_size= .40)
+
+parameters_DT = {'criterion': ['gini', 'entropy'], 'min_samples_split': range(2, 50, 2),
+                 'splitter': ['best', 'random'], 'max_depth': [None, 1, 100],
+                 'min_samples_leaf': range(1, 60, 2), 'max_features': [None, 'auto', 'sqrt', 'log2']}
+
+features_kept = ['poi', 'salary', 'deferral_payments', 'to_messages_impact',
+                 'expenses', 'deferred_income', 'director_fees']
+classify(DecisionTreeClassifier(), my_dataset, features_kept, fine_tune=True, parameters=parameters_DT)
+
 
 # Task 6: Dump your classifier, dataset, and features_list so anyone can
 # check your results. You do not need to change anything below, but make sure
 # that the version of poi_id.py that you submit can be run on its own and
 # generates the necessary .pkl files for validating your results.
 
-# selected classifier
+# Unselected Classifiers
+# clf_NB = GaussianNB()
+# test_classifier(clf_NB, my_dataset, final_features_NB)
+
+# clf_RF = RandomForestClassifier()
+# classifier(clf_RF, my_dataset, final_features_FR)
+
+# clf_SVC = SVC(kernel='rbf', C=1, gamma=.001, random_state=42)
+# test_classifier(clf_SVC, my_dataset, ['poi', 'salary'])
+
+# Selected Classifier
+features_kept = ['poi', 'salary', 'deferral_payments', 'deferred_income',
+                 'restricted_stock_deferred', 'from_message_impact']
+features_kept = ['poi', 'salary', 'deferral_payments', 'to_messages_impact',
+                 'expenses', 'deferred_income', 'director_fees']
+#features_kept.remove()
+features_kept.append('salary_impact')
 
 print "\nStarting test..."
-clf_DT = DecisionTreeClassifier()
-test_classifier(clf_DT, my_dataset, final_features_DT)
+print features_kept
+clf_DT = DecisionTreeClassifier(criterion='gini',
+                                max_depth=None, max_features='log2',
+                                min_samples_leaf=1, min_samples_split=42,
+                                splitter='random')
 
-clf_RF = RandomForestClassifier()
-test_classifier(clf_RF, my_dataset, final_features_FR)
-
-clf_NB = GaussianNB()
-test_classifier(clf_NB, my_dataset, final_features_NB)
-
-clf_SVC = SVC()
-test_classifier(clf_SVC, my_dataset, final_features_SVC)
+test_classifier(clf_DT, my_dataset, features_kept)
 
 
-#features_final = final_features_SVC
 #dump_classifier_and_data(clf, my_dataset, features_final)
-
