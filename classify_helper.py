@@ -15,85 +15,38 @@ SIZE_AND_TIME_STRING = "\tAccuracy: {:0.2%}\tDatatest Size: {:>0.{dec_points}f}\
 \tTime to fit: {:0.0f} minute(s) and {:0.0f} second(s)\t\
 Time to score: {:0.0f} minute(s) and {:0.0f} second(s)\nPredictions:"
 
-def classify(classifier, my_dataset, final_features, fine_tune=False, parameters={}, tune_size=1):
+def classify_tuner(clf, dataset, optimal_features, parameters={}, tune_size=1):
 
-    # Extracting Data
+    # testing classifier before tuning
+    print "Test before tuning:"
     features_train, features_test, labels_train, labels_test = \
-        stratified_data_extract(my_dataset, final_features)
+        test_classifier(clf, dataset, optimal_features, returns='feat')
 
-    # Assigning Classifier
-    clf = classifier
+    clf = GridSearchCV(clf, parameters)
 
     # Tune Size of Training
     features_train = features_train[:int(len(features_train)*tune_size)]
     labels_train = labels_train[:int(len(labels_train)*tune_size)]
 
-    # Fitting Training Data
-    t = float(time())
-    clf = clf.fit(features_train, labels_train)
-    fit_time = min_sec(time(), t)
-
-    # Getting Predictions
-    preds = clf.predict(features_test)
-
-    # Getting Training Score
+    print "Finding best parameters..."
     t = time()
-    accuracy = clf.score(features_test, labels_test)
-    score_time = min_sec(time(), t)
-
-
-    print final_features
-    print clf
-    print SIZE_AND_TIME_STRING.format(accuracy,
-                                       int(len(features_test)),
-                                       int(len(features_test)*tune_size),
-                                       fit_time[0], fit_time[1],
-                                       score_time[0], score_time[1], dec_points=0)
-    print preds
-    print '-'*50
-
-    # Find Best Parameters
-    if fine_tune:
-        try:
-            grid_search(classifier, [features_train, labels_train], parameters)
-        except:
-            print "Error: Wrong dictionary of parameters or GridSearchCV " \
-                  "does not apply to this classifier"
-
-
-# this function converts the time to minutes and seconds and returns tuple
-def min_sec(from_time, to_time):
-    return floor((from_time - to_time) / 60), (from_time - to_time) % 60,0
-
-# this function finds the best parameters
-# it is called within the classifier function when fine_tune is True
-def grid_search(classifier, train_data, parameters):
-
-    clf = GridSearchCV(classifier, parameters)
-
-    print "\nFinding best parameters..."
-    t = time()
-    clf.fit(train_data[0], train_data[1])
+    clf.fit(features_train, labels_train)
     train_time = min_sec(time(), t)
-
-    print "Time to find best parameters: " \
-        "{:.0f} minute(s) and {:0.0f} second(s)".format(train_time[0], train_time[1])
 
     print "Best parameters are:"
     pprint(clf.best_params_)
-    pprint(clf.best_estimator_)
+    print "Time to find best parameters: " \
+        "{:.0f} minute(s) and {:0.0f} second(s)".format(train_time[0], train_time[1])
 
+    print "\nTest after tuning..."
+    test_classifier(clf.best_estimator_, dataset, optimal_features)
     print "-" * 50
 
-def feature_scaling(classifier, data):
-    classifier_name = str(classifier)[0:str(classifier).find('(')]
-    if classifier_name == 'SVC' or classifier_name == 'KMean':
-        from sklearn.preprocessing import MinMaxScaler
-        print "Applying Feature Scaling..."
-        scaler = MinMaxScaler()
-        data = scaler.fit_transform(data)
-        return data
-    return data
+    return clf.best_estimator_
+
+# this function converts the time to minutes and seconds and returns tuple
+def min_sec(from_time, to_time):
+    return floor((from_time - to_time) / 60), (from_time - to_time) % 60
 
 PERF_FORMAT_STRING = "\
 \tAccuracy: {:>0.{display_precision}f}\tPrecision: {:>0.{display_precision}f}\t\
@@ -197,7 +150,6 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
 
                 testing_features.append(aditional_features[j])
 
-
                 # tracking progress
                 accuracy_tracker.append(accuracy)
                 precision_tracker.append(precision)
@@ -215,12 +167,12 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
                 testing_features.remove(testing_features[j+remove_idx])
                 remove_idx - 1
 
-        accuracy, precision, recall = test_classifier(clf, dataset, testing_features)
+        accuracy, precision, recall = test_classifier(clf, dataset, testing_features, returns='eval')
         test = "test_num{}".format(i+1)
         feature_test_dict.update({test: {'accuracy': accuracy,
-                                    'precision': precision,
-                                    'recall': recall,
-                                    'features': testing_features}})
+                                         'precision': precision,
+                                         'recall': recall,
+                                         'features': testing_features}})
         print "\tFeatures Used:\n " \
               "\t{}" \
               "\n\tProcessed in {:0.0f} minute(s) and {:0.0f} second(s)"\
@@ -237,14 +189,21 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
                      and feature_test_dict[name]['precision'] >= .30
                      and feature_test_dict[name]['recall'] >= .30]
 
+    if best_features <> []: best_features = best_features[0]
+
     if best_features <> []:
         # best features
         print "\nOptimal Features Returned"
+        print best_features
         return best_features
     else:
         # last features used
         print "\nLast Features Used Returned"
+        print testing_features
         return testing_features
+
+def avg_eval_metrics():
+    pass
 
 
 

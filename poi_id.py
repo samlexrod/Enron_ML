@@ -9,7 +9,7 @@ from sklearn.naive_bayes import GaussianNB
 from feature_helper import feat_sum, feat_ratio, data_explore, data_print, nan_handler
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
-from classify_helper import classify, auto_feature
+from classify_helper import classify_tuner, auto_feature, avg_eval_metrics
 from sklearn.ensemble import RandomForestClassifier
 
 # sys.path.append("../tools/")
@@ -104,98 +104,53 @@ final_features_FR = auto_feature(RandomForestClassifier(),
                                  my_dataset, features_for_testing, initial_features, show=False)
 '''
 
-#  selected classifier
-optimal_features = auto_feature(DecisionTreeClassifier(), my_dataset, additional_features, initial_features, iterate=5)
+# OPTIMIZING SELECTED CLASSIFIER
 
-print optimal_features
-'''
-# TUNE IN THE SELECTED CLASSIFIER
-parameters_DT = {'criterion': ['gini', 'entropy'], 'min_samples_split': range(2, 50, 2),
-                 'splitter': ['best', 'random'], 'max_depth': [None, 1, 100],
-                 'min_samples_leaf': range(1, 60, 2), 'max_features': [None, 'auto', 'sqrt', 'log2']}
-classify(DecisionTreeClassifier(), my_dataset, final_features_DT, fine_tune=False, parameters=parameters_DT)
+#   optimizing features in classifier using default parameters
+clf_def = DecisionTreeClassifier()
+optimal_features = auto_feature(clf_def, my_dataset, additional_features, initial_features, iterate=1)
 
+# DEBUG
+optimal_features = ['poi', 'salary', 'shared_receipt_with_poi', 'loan_advances',
+                    'director_fees', 'exercised_stock_options', 'total_compensation_abs']
 
-# TEST FINAL STEPS
-clf_DT_clean = DecisionTreeClassifier()
+# TUNE SELECTED CLASSIFIER
 
-clf_DT_grid = DecisionTreeClassifier(criterion='gini',
-                                max_depth=None, max_features='log2',
-                                min_samples_leaf=1, min_samples_split=44,
-                                splitter='random')
-
-
-min_sample_per_leaf = int(round(len(my_dataset.keys())*.01))
-clf_DT_manual = DecisionTreeClassifier(criterion='gini',
-                                max_depth=36,
-                                min_samples_leaf=min_sample_per_leaf, min_samples_split=2,
-                                splitter='best')
-
-
-#  find optimal Parameters & Features Test
-#  running with GridSearchCV suggested parameters
-print "GridSearchCV suggestions"
-print final_features_DT
-for i in range(0, 2):
-    test_classifier(clf_DT_grid, my_dataset, final_features_DT)
-print "-"*50
-#  running clean
-print "Default Parameters"
-print final_features_DT
-for i in range(0, 2):
-    test_classifier(clf_DT_clean, my_dataset, final_features_DT)
-print "-"*50
-#  running manual
-print "Manual Parameters"
-print final_features_DT
-for i in range(0, 2):
-    test_classifier(clf_DT_manual, my_dataset, final_features_DT)
-print "-"*50
-
-
-#  after running the test set the optimal features here:
-optimal_features = ['poi', 'salary', 'to_messages', 'to_messages_impact', 'restricted_stock', 'exercised_stock_options']
-second_optimal_features = ['poi', 'salary', 'deferred_income', 'exercised_stock_options']
+#   tuning the classifier using optimal features
 
 parameters_DT = {'criterion': ['gini', 'entropy'], 'min_samples_split': range(2, 50, 2),
                  'splitter': ['best', 'random'], 'max_depth': [None, 1, 100],
-                 'min_samples_leaf': range(1, 60, 2), 'max_features': [None, 'auto', 'sqrt', 'log2']}
-
-print "Fine Tuning..."
-model = DecisionTreeClassifier()
-from sklearn.model_selection import GridSearchCV
-from classify_helper import stratified_data_extract
-grid = GridSearchCV(model, parameters_DT)
-features_train, features_test, labels_train, labels_test = stratified_data_extract(my_dataset, optimal_features)
-grid.fit(features_train, labels_train)
-print grid
-x = grid.best_params_
-for i, j in zip(x.keys(), x.values()):
-    if i == x.keys()[len(x.keys()) - 1]:
-        comma = ''
-    else:
-        comma = ','
-
-    if type(j) == int:
-        print "{}={}{}".format(i, j, comma)
-    else:
-        print "{}='{}'{}".format(i, j, comma)
-print grid.best_score_
-print grid.best_estimator_
-
-
-print "Final Selection"
-print optimal_features
-for i in range(0, 2):
-    test_classifier(clf_DT_clean, my_dataset, optimal_features)
-print "-"*50
-
-print "Optimal Parameters"
-for i in range(0, 2):
-    test_classifier(clf_DT_manual, my_dataset, optimal_features)
-
-
-clf = clf_DT_clean
-dump_classifier_and_data(clf, my_dataset, optimal_features)
-
+                 'min_samples_leaf': range(1, 60, 2)}
+clf_best_estimator = classify_tuner(DecisionTreeClassifier(), my_dataset, optimal_features,
+                                            parameters=parameters_DT, tune_size=.5)
 '''
+clf_best_estimator = DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+                                            max_features=None, max_leaf_nodes=None,
+                                            min_impurity_decrease=0.0, min_impurity_split=None,
+                                            min_samples_leaf=1, min_samples_split=38,
+                                            min_weight_fraction_leaf=0.0, presort=False, random_state=None,
+                                            splitter='random')
+                                            '''
+
+# LAST OPTIMAL TEST
+
+#   testing classifier with suggested parameters
+print "\nTesting Classifier with New Parameters..."
+test_classifier(clf_best_estimator, my_dataset, optimal_features)
+
+#   optimizing features of tuned classifier
+optimal_features = auto_feature(clf_best_estimator, my_dataset, additional_features, initial_features, iterate=1)
+
+#   testing classifier with suggested parameters and newly optimal features
+print "\nTesting Classifier with New Parameters..."
+test_classifier(clf_best_estimator, my_dataset, optimal_features)
+
+# SELECTING CLASSIFIER TO DUMP
+clf_dump = DecisionTreeClassifier()
+
+# GETTING OPTIMAL AVERAGES
+#accuracy_average, precision_average, recall_average = avg_eval_metrics()
+
+dump_classifier_and_data(clf_dump, my_dataset, optimal_features)
+
+

@@ -5,10 +5,14 @@ aS'salary'
 p2
 aS'to_messages'
 p3
-aS'to_messages_impact'
+aS'expenses'
 p4
-aS'restricted_stock'
+aS'deferred_income'
 p5
-aS'exercised_stock_options'
+aS'total_stock_value'
 p6
+aS'exercised_stock_options'
+p7
+aS'total_compensation_abs'
+p8
 a.

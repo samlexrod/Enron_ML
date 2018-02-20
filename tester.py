@@ -16,14 +16,25 @@ from sklearn.cross_validation import StratifiedShuffleSplit
 sys.path.append("../tools/")
 from feature_format import featureFormat, targetFeatureSplit
 
+def feature_scaling(classifier, data):
+    classifier_name = str(classifier)[0:str(classifier).find('(')]
+    if classifier_name == 'SVC' or classifier_name == 'KMean':
+        from sklearn.preprocessing import MinMaxScaler
+        print "Applying Feature Scaling..."
+        scaler = MinMaxScaler()
+        data = scaler.fit_transform(data)
+        return data
+    return data
+
 PERF_FORMAT_STRING = "\
 \tAccuracy: {:>0.{display_precision}f}\tPrecision: {:>0.{display_precision}f}\t\
 Recall: {:>0.{display_precision}f}\tF1: {:>0.{display_precision}f}\tF2: {:>0.{display_precision}f}"
 RESULTS_FORMAT_STRING = "\tTotal predictions: {:4d}\tTrue positives: {:4d}\tFalse positives: {:4d}\
 \tFalse negatives: {:4d}\tTrue negatives: {:4d}"
 
-def test_classifier(clf, dataset, feature_list, folds = 1000):
+def test_classifier(clf, dataset, feature_list, folds=1000, returns=None):
     data = featureFormat(dataset, feature_list, sort_keys = True)
+    data = feature_scaling(clf, data)
     labels, features = targetFeatureSplit(data)
     cv = StratifiedShuffleSplit(labels, folds, random_state = 42)
     true_negatives = 0
@@ -84,7 +95,10 @@ def test_classifier(clf, dataset, feature_list, folds = 1000):
         print "Got a divide by zero when trying out:", clf
         print "Precision or recall may be undefined due to a lack of true positive predicitons."
 
-    return accuracy, precision, recall
+    if returns == 'eval':
+        return accuracy, precision, recall
+    elif returns == 'feat':
+        return features_train, features_test, labels_train, labels_test
 
 CLF_PICKLE_FILENAME = "my_classifier.pkl"
 DATASET_PICKLE_FILENAME = "my_dataset.pkl"
