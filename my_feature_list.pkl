@@ -5,11 +5,11 @@ aS'salary'
 p2
 aS'to_messages'
 p3
-aS'expenses'
-p4
 aS'deferred_income'
+p4
+aS'restricted_stock_deferred'
 p5
-aS'total_stock_value'
+aS'from_messages'
 p6
 aS'exercised_stock_options'
 p7
