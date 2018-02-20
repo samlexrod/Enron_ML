@@ -5,6 +5,7 @@ from math import floor
 from pprint import pprint
 from sklearn.model_selection import GridSearchCV
 from sklearn.cross_validation import StratifiedShuffleSplit
+from tester import test_classifier
 
 # this function trains the data and find best parameters when fine_tune is True
 # train_data and test_data should be in this format: [features, labels]
@@ -62,7 +63,7 @@ def classify(classifier, my_dataset, final_features, fine_tune=False, parameters
 
 # this function converts the time to minutes and seconds and returns tuple
 def min_sec(from_time, to_time):
-    return floor((from_time - to_time) / 60), (from_time - to_time) % 60
+    return floor((from_time - to_time) / 60), (from_time - to_time) % 60,0
 
 # this function finds the best parameters
 # it is called within the classifier function when fine_tune is True
@@ -80,6 +81,7 @@ def grid_search(classifier, train_data, parameters):
 
     print "Best parameters are:"
     pprint(clf.best_params_)
+    pprint(clf.best_estimator_)
 
     print "-" * 50
 
@@ -93,172 +95,159 @@ def feature_scaling(classifier, data):
         return data
     return data
 
-# the feature will extract data in labels and features
-def data_extract(classifier, my_dataset, testing_features):
+PERF_FORMAT_STRING = "\
+\tAccuracy: {:>0.{display_precision}f}\tPrecision: {:>0.{display_precision}f}\t\
+Recall: {:>0.{display_precision}f}\tF1: {:>0.{display_precision}f}\tF2: {:>0.{display_precision}f}"
+RESULTS_FORMAT_STRING = "\tTotal predictions: {:4d}\tTrue positives: {:4d}\tFalse positives: {:4d}\
+\tFalse negatives: {:4d}\tTrue negatives: {:4d}"
 
-    # Extracting Data
-    data = featureFormat(my_dataset, testing_features, sort_keys=True)
-    data = feature_scaling(classifier, data)
-    labels, features = targetFeatureSplit(data)
+def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000, iterate=1):
 
-    # Spliting Features and Labels
-    features_train, features_test, labels_train, labels_test = \
-        train_test_split(features, labels, test_size=0.3, random_state=42)
+    feature_test_dict = {}
 
-    return features_train, features_test, labels_train, labels_test
+    for i in range(iterate):
+
+        # break if initial_features condition is not met
+        # it should be two features
+        if len(initial_features) <> 2:
+            print "There should be only two initial features"
+            break
+
+        testing_features  = [feature for feature in initial_features]
+        accuracy_tracker  = []
+        precision_tracker = []
+        recall_tracker    = []
+        remove_idx = 1
+
+        # STRATIFIED TEST
+        # Extracting and Stratifying Data
+        print "Starting {} out of {}, {} folds...".format(i+1, iterate, folds)
+        t = time()
+        for j in range(len(aditional_features)):
+
+            # extracting data
+            data = featureFormat(dataset, testing_features, sort_keys=True)
+            # -> feature scaling here
+            labels, features = targetFeatureSplit(data)
+            cv = StratifiedShuffleSplit(labels, folds, random_state=42)
+
+            # initiating variables
+            true_positives  = 0
+            true_negatives  = 0
+            false_positives = 0
+            false_negatives = 0
+
+            # Creating Stratified Features and Labels
+
+            for train_strat_idxs, test_strat_idxs in cv:
+                # resetting lists for next stratified index number
+                features_train = []
+                features_test  = []
+                labels_train   = []
+                labels_test    = []
+
+                # assigning stratified features and labels
+                # related to stratified indexes
+                for train_idx in train_strat_idxs:
+                    features_train.append(features[train_idx])
+                    labels_train.append(labels[train_idx])
+                for test_idx in test_strat_idxs:
+                    features_test.append(features[test_idx])
+                    labels_test.append(labels[test_idx])
+
+                # fitting and predicting on specific indexes for training and labels
+                clf.fit(features_train, labels_train)
+                preds = clf.predict(features_test)
+
+                for pred, actual in zip(preds, labels_test):
+                    if pred == actual and pred == 1:
+                        true_positives += 1
+                    elif pred == actual and pred == 0:
+                        true_negatives += 1
+                    elif pred <> actual and pred == 1:
+                        false_positives += 1
+                    elif pred <> actual and pred == 0:
+                        false_negatives += 1
+                    else:
+                        print "{} is not valid. Prediction should be classified as 0 or 1"
+
+            try:
+                total_predictions = true_negatives + false_negatives + false_positives + true_positives
+                accuracy = 1.0*(true_positives + true_negatives)/total_predictions
+                precision = 1.0*true_positives/(true_positives+false_positives)
+                recall = 1.0*true_positives/(true_positives+false_negatives)
+                f1 = 2.0 * true_positives/(2*true_positives + false_positives+false_negatives)
+                f2 = (1+2.0*2.0) * precision*recall/(4*precision + recall)
+
+                if j <> 0:
+                    max_accuracy = max(accuracy_tracker)
+                    max_precision = max(precision_tracker)
+                    max_recall = max(recall_tracker)
 
 
-def stratified_data_extract(my_dataset, testing_features, folds=1000):
+                if j == 0:
+                    pass
+                elif accuracy <= max_accuracy:
+                    testing_features.remove(testing_features[j+remove_idx])
+                    remove_idx -= 1
+                elif accuracy > max_accuracy:
+                    if precision < max_precision or recall < max_recall:
+                        testing_features.remove(testing_features[j+remove_idx])
+                        remove_idx -= 1
 
-    # Extracting and Stratifying Data
-    data = featureFormat(my_dataset, testing_features, sort_keys=True)
-    labels, features = targetFeatureSplit(data)
-    cv = StratifiedShuffleSplit(labels, folds, random_state=42, test_size=.1)
+                testing_features.append(aditional_features[j])
 
-    # Creating Stratified Features and Labels
-    for train_idx, test_idx in cv:
-        features_train = []
-        features_test = []
-        labels_train = []
-        labels_test = []
-        for i in train_idx:
-            features_train.append(features[i])
-            labels_train.append(labels[i])
-        for j in test_idx:
-            features_test.append(features[j])
-            labels_test.append(labels[j])
 
-    return features_train, features_test, labels_train, labels_test
+                # tracking progress
+                accuracy_tracker.append(accuracy)
+                precision_tracker.append(precision)
+                recall_tracker.append(recall)
 
-# features_for_testing and initial_features should be in the following format: [a, b, c...]
 
-def eval_metrics(preds, labels_test):
-    true_positives = sum([1 for pred, actual in zip(preds, labels_test)
-                          if pred == actual and pred == 1])
-    false_positives = sum([1 for pred, actual in zip(preds, labels_test)
-                           if pred <> actual and pred == 1])
-    false_negatives = sum([1 for pred, actual in zip(preds, labels_test)
-                           if pred <> actual and pred == 0])
 
-    precision = 1.0 * true_positives / (true_positives + false_positives)
-    recall = 1.0 * true_positives / (true_positives + false_negatives)
-    f1 = 2.0 * true_positives / (2 * true_positives + false_positives + false_negatives)
-    f2 = (1 + 2.0 * 2.0) * precision * recall / (4 * precision + recall)
+            except:
+                print "Got a divide by zero when trying out:", clf
+                print "Precision or recall may be undefined due to a lack of true positive predicitons."
+                accuracy_tracker.append(accuracy)
+                precision_tracker.append(0.)
+                recall_tracker.append(0.)
+                # automatic removal
+                testing_features.remove(testing_features[j+remove_idx])
+                remove_idx - 1
 
-    return precision, recall
+        accuracy, precision, recall = test_classifier(clf, dataset, testing_features)
+        test = "test_num{}".format(i+1)
+        feature_test_dict.update({test: {'accuracy': accuracy,
+                                    'precision': precision,
+                                    'recall': recall,
+                                    'features': testing_features}})
+        print "\tFeatures Used:\n " \
+              "\t{}" \
+              "\n\tProcessed in {:0.0f} minute(s) and {:0.0f} second(s)"\
+            .format(testing_features, min_sec(time(), t)[0], min_sec(time(), t)[1])
 
-def auto_feature(classifier, my_dataset, features_for_testing, initial_features, show=False):
+    test_accuracy_list = [feature_test_dict[name]['accuracy'] for name in feature_test_dict.keys()]
 
-    classifier_name = str(classifier)[0:str(classifier).find('(')]
-    print "Finding automatic features for {}".format(classifier_name)
-    testing_features = [feature for feature in initial_features]
-    removed_features = []
-    acc_score_tracker = []
-    prec_score_tracker = []
-    reca_score_tracker = []
+    max_test_accuracy = max(test_accuracy_list)
+    #max_test_precision = max([feature_test_dict[name]['precision'] for name in feature_test_dict.keys()])
+    #max_test recall = max([feature_test_dict[name]['recall'] for name in feature_test_dict.keys()])
 
-    features_train, features_test, labels_train, labels_test = \
-        stratified_data_extract(my_dataset, testing_features)
+    best_features = [feature_test_dict[name]['features'] for name in feature_test_dict.keys()
+                     if feature_test_dict[name]['accuracy'] == max_test_accuracy
+                     and feature_test_dict[name]['precision'] >= .30
+                     and feature_test_dict[name]['recall'] >= .30]
 
-    # conducting first test of initial features before iteration
-    clf = classifier
-    clf.fit(features_train, labels_train)
-    score = clf.score(features_test, labels_test)
-    preds = clf.predict(features_train)
+    if best_features <> []:
+        # best features
+        print "\nOptimal Features Returned"
+        return best_features
+    else:
+        # last features used
+        print "\nLast Features Used Returned"
+        return testing_features
 
-    # First Test Stats
-    if show:
-        print "\nType of classifier:", classifier_name
-        print 'First score is {:0.2%}.'.format(score)
-        print preds
 
-    # Initial Score Trackers
-    acc_score_tracker.append(score)
-    try:
-        precision, recall = eval_metrics(preds, labels_test)
-        prec_score_tracker.append(precision)
-        reca_score_tracker.append(recall)
-        if show: print "++{} addition leads to valid evaluation metrics".format(feature)
-    except:
-        if show: print "--{} addition does not lead to valid evaluation metrics".format(feature)
-        prec_score_tracker.append(0)
-        reca_score_tracker.append(0)
 
-    if show: print "|\nNext feature..."
-
-    # testing prediction on one feature at a time
-    # appending only if greater than max
-    for feature in features_for_testing:
-        # adding one feature at a time
-        testing_features.append(feature)
-
-        # fitting the model
-        features_train, features_test, labels_train, labels_test = \
-            stratified_data_extract(my_dataset, testing_features)
-        clf.fit(features_train, labels_train)
-        preds = clf.predict(features_test)
-
-        # To debug SVC
-        if classifier_name <> "SVC":
-            pass
-
-        # EVALUATION METRICS
-        try:
-            precision, recall = eval_metrics(preds, labels_test)
-            prec_score_tracker.append(precision)
-            reca_score_tracker.append(recall)
-            if show: print "++{} addition leads to valid evaluation metrics".format(feature)
-        except:
-            if show: print "--{} addition does not lead to valid evaluation metrics".format(feature)
-            prec_score_tracker.append(0)
-            reca_score_tracker.append(0)
-
-        # SCORE TRACKERS
-        acc_score = clf.score(features_test, labels_test)
-
-        # USER STATS WHEN CONDITION MEET OR NOT
-        if acc_score <= max(acc_score_tracker):
-            if show: print "The score is {0:0.2%} when testing with {1}. The maximum is {2:0.2%}. " \
-                           "\n{1} was removed."\
-                .format(acc_score, feature, max(acc_score_tracker))
-            testing_features.remove(feature)
-            removed_features.append(feature)
-        elif acc_score > max(acc_score_tracker):
-            if precision < .30 or recall < .30:
-                print "\tWARNING!"
-                if show:
-                    print "The precision is {0:0.2%} when testing with {1}. The maximum is {2:0.2%}. " \
-                               "\n{1} was removed." \
-                                .format(precision, feature, max(prec_score_tracker))
-                    print "The recall is {0:0.2%} when testing with {1}. The maximum is {2:0.2%}. " \
-                               "\n{1} was removed." \
-                                .format(recall, feature, max(reca_score_tracker))
-                testing_features.remove(feature)
-                removed_features.append(feature)
-            else:
-                if show: print "**The score is {0:0.2%} when testing with {1}. The maximum is {2:0.2%}. " \
-                               "\n{1} was added." \
-                    .format(acc_score, feature, max(acc_score_tracker))
-
-        if show: print zip(preds, labels_test)
-
-        # keeping track of the score
-        acc_score_tracker.append(acc_score)
-
-        if feature == features_for_testing[len(features_for_testing)-1] and show:
-            print ""
-        elif show:
-            print "|\nNext feature..."
-
-    # final user info
-    print "\nType of classifier:", str(classifier)[0:str(classifier).find('(')]
-    print "Copy: features_kept = {}".format(testing_features)
-    print "Final score: {:0.2%}".format(max(acc_score_tracker))
-    print "Pred:", preds
-    print "-"*50
-
-    final_features = testing_features
-    return final_features
 
 
 
