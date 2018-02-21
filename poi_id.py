@@ -135,14 +135,15 @@ clf_best_estimator = DecisionTreeClassifier(class_weight=None, criterion='gini',
 # LAST OPTIMAL TEST
 
 #   testing classifier with suggested parameters
-print "\nTesting Classifier with New Parameters..."
+print "\n-> Testing Classifier with New Parameters..."
 test_classifier(clf_best_estimator, my_dataset, optimal_features)
 
 #   optimizing features of tuned classifier
-optimal_features = auto_feature(clf_best_estimator, my_dataset, additional_features, initial_features, iterate=1)
+optimal_features = auto_feature(clf_best_estimator, my_dataset, additional_features, initial_features,
+                                iterate=1, max_eval_foc='reca')
 
 #   testing classifier with suggested parameters and newly optimal features
-print "\nTesting Classifier with New Parameters..."
+print "\n-> Testing Classifier with New Parameters..."
 test_classifier(clf_best_estimator, my_dataset, optimal_features)
 
 # SELECTING CLASSIFIER TO DUMP
