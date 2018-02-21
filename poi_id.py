@@ -94,21 +94,23 @@ additional_features.remove('salary')
 additional_features.remove('poi')
 additional_features.remove('email_address')
 initial_features = ['poi', 'salary']
-'''
+
 #  initiating automatic search
-final_features_SVC = auto_feature(SVC(),
-                                 my_dataset, features_for_testing, initial_features, show=False)
-final_features_NB = auto_feature(GaussianNB(),
-                                 my_dataset, features_for_testing, initial_features, show=False)
-final_features_FR = auto_feature(RandomForestClassifier(),
-                                 my_dataset, features_for_testing, initial_features, show=False)
 '''
+final_features_SVC = auto_feature(SVC(),
+                                 my_dataset, additional_features, initial_features, iterate=1)
+final_features_NB = auto_feature(GaussianNB(),
+                                 my_dataset, additional_features, initial_features)
+final_features_FR = auto_feature(RandomForestClassifier(),
+                                 my_dataset, additional_features, initial_features)
+                                 '''
+
 
 # OPTIMIZING SELECTED CLASSIFIER
 
 #   optimizing features in classifier using default parameters
 clf_def = DecisionTreeClassifier()
-optimal_features = auto_feature(clf_def, my_dataset, additional_features, initial_features, iterate=1)
+optimal_features = auto_feature(clf_def, my_dataset, additional_features, initial_features, iterate=5)
 
 # DEBUG
 optimal_features = ['poi', 'salary', 'shared_receipt_with_poi', 'loan_advances',
@@ -121,7 +123,7 @@ optimal_features = ['poi', 'salary', 'shared_receipt_with_poi', 'loan_advances',
 parameters_DT = {'criterion': ['gini', 'entropy'], 'min_samples_split': range(2, 50, 2),
                  'splitter': ['best', 'random'], 'max_depth': [None, 1, 100],
                  'min_samples_leaf': range(1, 60, 2)}
-clf_best_estimator = classify_tuner(DecisionTreeClassifier(), my_dataset, optimal_features,
+clf_best_estimator = classify_tuner(clf_def, my_dataset, optimal_features,
                                             parameters=parameters_DT, tune_size=.5)
 '''
 clf_best_estimator = DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
@@ -139,18 +141,20 @@ print "\n-> Testing Classifier with New Parameters..."
 test_classifier(clf_best_estimator, my_dataset, optimal_features)
 
 #   optimizing features of tuned classifier
-optimal_features = auto_feature(clf_best_estimator, my_dataset, additional_features, initial_features,
-                                iterate=1, max_eval_foc='reca')
+print "\tContinue folding and optimizing features with new parameters focusing on maximizing recall:"
+optimal_features_tune = auto_feature(clf_best_estimator, my_dataset, additional_features, initial_features,
+                                iterate=5, max_eval_foc='reca')
 
 #   testing classifier with suggested parameters and newly optimal features
 print "\n-> Testing Classifier with New Parameters..."
-test_classifier(clf_best_estimator, my_dataset, optimal_features)
+test_classifier(clf_best_estimator, my_dataset, optimal_features_tune) # parameter fails the test
 
 # SELECTING CLASSIFIER TO DUMP
-clf_dump = DecisionTreeClassifier()
+clf_dump = DecisionTreeClassifier() # default parameters are selected
 
 # GETTING OPTIMAL AVERAGES
-#accuracy_average, precision_average, recall_average = avg_eval_metrics()
+
+avg_eval_metrics(clf_dump, my_dataset, optimal_features, sampling_size=30)
 
 dump_classifier_and_data(clf_dump, my_dataset, optimal_features)
 

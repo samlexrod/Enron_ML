@@ -3,8 +3,14 @@ S'poi'
 p1
 aS'salary'
 p2
-aS'exercised_stock_options'
+aS'shared_receipt_with_poi'
 p3
-aS'total_compensation_abs'
+aS'loan_advances'
 p4
+aS'director_fees'
+p5
+aS'exercised_stock_options'
+p6
+aS'total_compensation_abs'
+p7
 a.
