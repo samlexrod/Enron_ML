@@ -68,6 +68,7 @@ RESULTS_FORMAT_STRING = "\tTotal predictions: {:4d}\tTrue positives: {:4d}\tFals
 def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000, iterate=5, max_eval_foc='both'):
 
     feature_test_dict = {}
+    return_initial = False
 
     for i in range(iterate):
 
@@ -212,9 +213,13 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
                     remove_idx -= 1
 
             # add next feature
-            if j <> len(aditional_features): testing_features.append(aditional_features[j])
+            if j <> len(aditional_features):
+                testing_features.append(aditional_features[j])
+            elif len(testing_features) == 1:
+                return_initial = True
+                testing_features = initial_features
 
-        print "--> Final test gathering and collecting test {} evaluation metrics:".format(i+1)
+        print "---> Final test gathering and collecting test {} evaluation metrics:".format(i+1)
         accuracy, precision, recall = test_classifier(clf, dataset, testing_features, returns='eval')
         test = "test_num{}".format(i+1)
         feature_test_dict.update({test: {'accuracy': accuracy,
@@ -234,6 +239,8 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
     best_features = [feature_test_dict[name]['features'] for name in feature_test_dict.keys()
                      if feature_test_dict[name]['accuracy'] == max_test_accuracy
                      and feature_test_dict[name]['precision'] >= .30
+                     and feature_test_dict[name]['precision'] <> 'NaN'
+                     and feature_test_dict[name]['recall'] <> 'NaN'
                      and feature_test_dict[name]['recall'] >= .30]
 
     if best_features <> []: best_features = best_features[0]
@@ -245,8 +252,12 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
         return best_features
     else:
         # last features used
-        print "\nWARNING! At least one evaluation metric did not met the .30 rule" \
-              "\nLast Features Used Returned"
+        if not return_initial:
+            print "\nWARNING! At least one evaluation metric did not met the .30 rule" \
+                  "\nLast Features Used Returned"
+        elif return_initial:
+            print "\nWARNING! The model returns no or no significant evaluation metrics." \
+                  "\nInitial Features Return"
         print testing_features
         return testing_features
 

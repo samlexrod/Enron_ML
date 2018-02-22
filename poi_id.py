@@ -99,15 +99,14 @@ print "Additional Features:", len(additional_features)
 
 #  initiating automatic search
 
-#final_features_SVC = auto_feature(SVC(),
-                                 #my_dataset, additional_features, initial_features, iterate=2)
+final_features_SVC = auto_feature(SVC(),
+                                 my_dataset, additional_features, initial_features, iterate=2)
 
-'''
 final_features_NB = auto_feature(GaussianNB(),
-                                 my_dataset, additional_features, initial_features)
+                                 my_dataset, additional_features, initial_features, iterate=2)
 final_features_FR = auto_feature(RandomForestClassifier(),
-                                 my_dataset, additional_features, initial_features)
-                                 '''
+                                 my_dataset, additional_features, initial_features, iterate=1)
+
 
 
 # OPTIMIZING SELECTED CLASSIFIER
@@ -117,7 +116,7 @@ final_features_FR = auto_feature(RandomForestClassifier(),
 
 
 clf_def = DecisionTreeClassifier()
-optimal_features = auto_feature(clf_def, my_dataset, additional_features, initial_features, iterate=1)
+optimal_features = auto_feature(clf_def, my_dataset, additional_features, initial_features, iterate=5)
 
 # DEBUG
 optimal_features = ['poi', 'salary', 'shared_receipt_with_poi', 'loan_advances',
@@ -161,7 +160,7 @@ clf_dump = DecisionTreeClassifier() # default parameters are selected
 
 # GETTING OPTIMAL AVERAGES
 
-avg_eval_metrics(clf_dump, my_dataset, optimal_features, sampling_size=1)
+avg_eval_metrics(clf_dump, my_dataset, optimal_features, sampling_size=30)
 
 dump_classifier_and_data(clf_dump, my_dataset, optimal_features)
 
