@@ -81,7 +81,7 @@ all_features = my_dataset.values()[0].keys()
 data_explore(my_dataset, all_features)
 
 #  Converting null to zero value
-nan_handler(my_dataset)
+#nan_handler(my_dataset)
 
 data_explore(my_dataset, all_features)
 
@@ -95,10 +95,14 @@ additional_features.remove('poi')
 additional_features.remove('email_address')
 initial_features = ['poi', 'salary']
 
+print "Additional Features:", len(additional_features)
+
 #  initiating automatic search
+
+#final_features_SVC = auto_feature(SVC(),
+                                 #my_dataset, additional_features, initial_features, iterate=2)
+
 '''
-final_features_SVC = auto_feature(SVC(),
-                                 my_dataset, additional_features, initial_features, iterate=1)
 final_features_NB = auto_feature(GaussianNB(),
                                  my_dataset, additional_features, initial_features)
 final_features_FR = auto_feature(RandomForestClassifier(),
@@ -109,8 +113,11 @@ final_features_FR = auto_feature(RandomForestClassifier(),
 # OPTIMIZING SELECTED CLASSIFIER
 
 #   optimizing features in classifier using default parameters
+
+
+
 clf_def = DecisionTreeClassifier()
-optimal_features = auto_feature(clf_def, my_dataset, additional_features, initial_features, iterate=5)
+optimal_features = auto_feature(clf_def, my_dataset, additional_features, initial_features, iterate=1)
 
 # DEBUG
 optimal_features = ['poi', 'salary', 'shared_receipt_with_poi', 'loan_advances',
@@ -143,7 +150,7 @@ test_classifier(clf_best_estimator, my_dataset, optimal_features)
 #   optimizing features of tuned classifier
 print "\tContinue folding and optimizing features with new parameters focusing on maximizing recall:"
 optimal_features_tune = auto_feature(clf_best_estimator, my_dataset, additional_features, initial_features,
-                                iterate=5, max_eval_foc='reca')
+                                iterate=1, max_eval_foc='reca')
 
 #   testing classifier with suggested parameters and newly optimal features
 print "\n-> Testing Classifier with New Parameters..."
@@ -154,7 +161,7 @@ clf_dump = DecisionTreeClassifier() # default parameters are selected
 
 # GETTING OPTIMAL AVERAGES
 
-avg_eval_metrics(clf_dump, my_dataset, optimal_features, sampling_size=30)
+avg_eval_metrics(clf_dump, my_dataset, optimal_features, sampling_size=1)
 
 dump_classifier_and_data(clf_dump, my_dataset, optimal_features)
 

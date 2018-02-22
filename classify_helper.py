@@ -85,122 +85,143 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
 
         # STRATIFIED TEST
         # Extracting and Stratifying Data
-        print "-> Starting {} out of {}, {} folds...".format(i+1, iterate, folds)
+        print "\n-> Starting {} out of {}, {} folds focusing on {}...".format(i+1, iterate, folds, max_eval_foc)
         t = time()
-        for j in range(len(aditional_features)):
+        for j in range(len(aditional_features)+1):
+            print "--> Testing {} out of {} predictor features".format(j+1, len(aditional_features)+1)
+
+            use_idx = j + remove_idx
+
+            # allow evaluation calculations
+            # only if there is not too many missing cases
+            skip_feature = False
 
             # extracting data
             data = featureFormat(dataset, testing_features, sort_keys=True)
             #data = feature_scaling(clf, data)
             labels, features = targetFeatureSplit(data)
-            cv = StratifiedShuffleSplit(labels, folds, random_state=42)
 
-            # initiating variables
-            true_positives  = 0
-            true_negatives  = 0
-            false_positives = 0
-            false_negatives = 0
-
-            # Creating Stratified Features and Labels
-
-            for train_strat_idxs, test_strat_idxs in cv:
-                # resetting lists for next stratified index number
-                features_train = []
-                features_test  = []
-                labels_train   = []
-                labels_test    = []
-
-                # assigning stratified features and labels
-                # related to stratified indexes
-                for train_idx in train_strat_idxs:
-                    features_train.append(features[train_idx])
-                    labels_train.append(labels[train_idx])
-                for test_idx in test_strat_idxs:
-                    features_test.append(features[test_idx])
-                    labels_test.append(labels[test_idx])
-
-                # DEBUG SVC
-                if testing_features[1] == 'restricted_stock_deferred':
-                    pass
-
-                # fitting and predicting on specific indexes for training and labels
-                clf.fit(features_train, labels_train)
-                preds = clf.predict(features_test)
-
-                for pred, actual in zip(preds, labels_test):
-                    if pred == actual and pred == 1:
-                        true_positives += 1
-                    elif pred == actual and pred == 0:
-                        true_negatives += 1
-                    elif pred <> actual and pred == 1:
-                        false_positives += 1
-                    elif pred <> actual and pred == 0:
-                        false_negatives += 1
-                    else:
-                        print "{} is not valid. Prediction should be classified as 0 or 1"
+            # debug
+            pass
+            if j == len(aditional_features)-1:
+                pass
+            if testing_features[1] == 'total_compensation_abs':
+                pass
 
             try:
-                total_predictions = true_negatives + false_negatives + false_positives + true_positives
-                accuracy = 1.0*(true_positives + true_negatives)/total_predictions
-                precision = 1.0*true_positives/(true_positives+false_positives)
-                recall = 1.0*true_positives/(true_positives+false_negatives)
-                f1 = 2.0 * true_positives/(2*true_positives + false_positives+false_negatives)
-                f2 = (1+2.0*2.0) * precision*recall/(4*precision + recall)
+                cv = StratifiedShuffleSplit(labels, folds, random_state=42)
 
-                if j <> 0:
-                    max_accuracy = max(accuracy_tracker)
-                    max_precision = max(precision_tracker)
-                    max_recall = max(recall_tracker)
+                # initiating variables
+                true_positives  = 0
+                true_negatives  = 0
+                false_positives = 0
+                false_negatives = 0
 
+                # Creating Stratified Features and Labels
 
-                # MAXIMUN ACCURACY AND EVALUATION FOCUS
-                # max_eval_foc
-                if j == 0:
-                    pass
-                elif accuracy <= max_accuracy:
-                    testing_features.remove(testing_features[j+remove_idx])
-                    remove_idx -= 1
-                elif accuracy > max_accuracy:
-                    if max_eval_foc.lower() == 'both':
-                        if precision < max_precision or recall < max_recall:
-                            testing_features.remove(testing_features[j+remove_idx])
-                            remove_idx -= 1
-                    elif max_eval_foc.lower() == 'prec':
-                        if precision < max_precision or recall < .30:
-                            testing_features.remove(testing_features[j+remove_idx])
-                            remove_idx -= 1
-                    elif max_eval_foc.lower() == 'reca':
-                        if precision < .30 or recall < max_recall:
-                            testing_features.remove(testing_features[j+remove_idx])
-                            remove_idx -= 1
+                for train_strat_idxs, test_strat_idxs in cv:
+                    # resetting lists for next stratified index number
+                    features_train = []
+                    features_test  = []
+                    labels_train   = []
+                    labels_test    = []
 
-                testing_features.append(aditional_features[j])
+                    # assigning stratified features and labels
+                    # related to stratified indexes
+                    for train_idx in train_strat_idxs:
+                        features_train.append(features[train_idx])
+                        labels_train.append(labels[train_idx])
+                    for test_idx in test_strat_idxs:
+                        features_test.append(features[test_idx])
+                        labels_test.append(labels[test_idx])
 
-                # tracking progress
-                accuracy_tracker.append(accuracy)
-                precision_tracker.append(precision)
-                recall_tracker.append(recall)
+                    # fitting and predicting on specific indexes for training and labels
+                    clf.fit(features_train, labels_train)
 
+                    preds = clf.predict(features_test)
 
+                    for pred, actual in zip(preds, labels_test):
+                        if pred == actual and pred == 1:
+                            true_positives += 1
+                        elif pred == actual and pred == 0:
+                            true_negatives += 1
+                        elif pred <> actual and pred == 1:
+                            false_positives += 1
+                        elif pred <> actual and pred == 0:
+                            false_negatives += 1
+                        else:
+                            print "{} is not valid. Prediction should be classified as 0 or 1"
 
             except:
-                print "Got a divide by zero when trying out:", clf
-                print "Precision or recall may be undefined due to a lack of true positive predictions."
-                accuracy_tracker.append(accuracy)
-                precision_tracker.append(0.)
-                recall_tracker.append(0.)
-                # automatic removal
-                testing_features.remove(testing_features[j+remove_idx])
+                print "Too much missing data using just {}.".format(testing_features)
+                testing_features.remove(testing_features[use_idx])
                 remove_idx -= 1
-                testing_features.append(aditional_features[j])
+                skip_feature = True
 
+            if not skip_feature:
+
+                try:
+                    total_predictions = true_negatives + false_negatives + false_positives + true_positives
+                    accuracy = 1.0*(true_positives + true_negatives)/total_predictions
+                    precision = 1.0*true_positives/(true_positives+false_positives)
+                    recall = 1.0*true_positives/(true_positives+false_negatives)
+                    f1 = 2.0 * true_positives/(2*true_positives + false_positives+false_negatives)
+                    f2 = (1+2.0*2.0) * precision*recall/(4*precision + recall)
+
+                    print "Evaluation metrics ok!"
+
+                    if j <> 0:
+                        max_accuracy = max(accuracy_tracker)
+                        max_precision = max(precision_tracker)
+                        max_recall = max(recall_tracker)
+
+                    # MAXIMUN ACCURACY AND EVALUATION FOCUS
+                    # max_eval_foc
+                    if j == 0:
+                        pass
+                    elif accuracy <= max_accuracy:
+                        testing_features.remove(testing_features[use_idx])
+                        remove_idx -= 1
+                    elif accuracy > max_accuracy:
+                        if max_eval_foc.lower() == 'both':
+                            if precision < max_precision or recall < max_recall:
+                                testing_features.remove(testing_features[use_idx])
+                                remove_idx -= 1
+                        elif max_eval_foc.lower() == 'prec':
+                            if precision < max_precision or recall < .30:
+                                testing_features.remove(testing_features[use_idx])
+                                remove_idx -= 1
+                        elif max_eval_foc.lower() == 'reca':
+                            if precision < .30 or recall < max_recall:
+                                testing_features.remove(testing_features[use_idx])
+                                remove_idx -= 1
+
+                    # tracking progress
+                    accuracy_tracker.append(accuracy)
+                    precision_tracker.append(precision)
+                    recall_tracker.append(recall)
+
+                except:
+                    print "Got a divide by zero when trying out:", clf
+                    print "Precision or recall may be undefined due to a lack of true positive predictions."
+                    accuracy_tracker.append(accuracy)
+                    precision_tracker.append('NaN')
+                    recall_tracker.append('NaN')
+                    # automatic removal
+                    testing_features.remove(testing_features[use_idx])
+                    remove_idx -= 1
+
+            # add next feature
+            if j <> len(aditional_features): testing_features.append(aditional_features[j])
+
+        print "--> Final test gathering and collecting test {} evaluation metrics:".format(i+1)
         accuracy, precision, recall = test_classifier(clf, dataset, testing_features, returns='eval')
         test = "test_num{}".format(i+1)
         feature_test_dict.update({test: {'accuracy': accuracy,
                                          'precision': precision,
                                          'recall': recall,
                                          'features': testing_features}})
-        print "\tFeatures Used:\n " \
+        print "\tFeatures Used in Final Test:\n " \
               "\t{}" \
               "\n\tProcessed in {:0.0f} minute(s) and {:0.0f} second(s)"\
             .format(testing_features, min_sec(time(), t)[0], min_sec(time(), t)[1])
@@ -307,12 +328,12 @@ def avg_eval_metrics(clf, dataset, optimal_features, folds=1000, sampling_size=3
 
     print "\n-> Final Test..."
     test_classifier(clf, dataset, optimal_features)
-    AVERAGE_MESSAGE = "\n\tSampling Size: {:0.0f}" \
+    AVERAGE_MESSAGE = "{}\n\tSampling Size: {:0.0f}" \
                       "\tSampling Accuracy Average: {:0.{dec}f}" \
                       "\tSampling Precision Average: {:0.{dec}f}" \
                       "\tSampling Recall Average: {:0.{dec}f}"
 
-    print AVERAGE_MESSAGE.format(sampling_size, samp_accuracy_avg,
+    print AVERAGE_MESSAGE.format("*"*60,sampling_size, samp_accuracy_avg,
                                   samp_precision_avg, samp_recall_avg, dec=2)
 
 
