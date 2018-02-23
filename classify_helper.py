@@ -1,5 +1,4 @@
 from feature_format import featureFormat, targetFeatureSplit
-from sklearn.cross_validation import train_test_split
 from time import time
 from math import floor
 from pprint import pprint
@@ -99,7 +98,7 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
 
             # extracting data
             data = featureFormat(dataset, testing_features, sort_keys=True)
-            #data = feature_scaling(clf, data)
+            data = feature_scaling(clf, data)
             labels, features = targetFeatureSplit(data)
 
             # debug
@@ -118,8 +117,6 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
                 false_positives = 0
                 false_negatives = 0
 
-                # Creating Stratified Features and Labels
-
                 for train_strat_idxs, test_strat_idxs in cv:
                     # resetting lists for next stratified index number
                     features_train = []
@@ -127,6 +124,7 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
                     labels_train   = []
                     labels_test    = []
 
+                    # Creating Stratified Features and Labels
                     # assigning stratified features and labels
                     # related to stratified indexes
                     for train_idx in train_strat_idxs:
@@ -198,9 +196,9 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
                                 remove_idx -= 1
 
                     # tracking progress
-                    accuracy_tracker.append(accuracy)
-                    precision_tracker.append(precision)
-                    recall_tracker.append(recall)
+                    accuracy_tracker.append(round(accuracy, 2))
+                    precision_tracker.append(round(precision, 2))
+                    recall_tracker.append(round(recall, 2))
 
                 except:
                     print "Got a divide by zero when trying out:", clf
@@ -230,6 +228,13 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
               "\t{}" \
               "\n\tProcessed in {:0.0f} minute(s) and {:0.0f} second(s)"\
             .format(testing_features, min_sec(time(), t)[0], min_sec(time(), t)[1])
+
+        print "\tAccuracy Tracker {}" \
+              "\n\tPrecision Tracker: {}" \
+              "\n\tMax Precision: {}" \
+              "\n\tRecall Tracker: {}" \
+              "\n\tMax Recall: {}".format(accuracy_tracker, precision_tracker, max(precision_tracker),
+                                          recall_tracker, max(recall_tracker))
 
     test_accuracy_list = [feature_test_dict[name]['accuracy'] for name in feature_test_dict.keys()]
 

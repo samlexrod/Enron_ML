@@ -5,12 +5,8 @@ aS'salary'
 p2
 aS'shared_receipt_with_poi'
 p3
-aS'loan_advances'
-p4
 aS'director_fees'
-p5
+p4
 aS'exercised_stock_options'
-p6
-aS'total_compensation_abs'
-p7
+p5
 a.
