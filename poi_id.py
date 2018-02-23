@@ -91,10 +91,9 @@ initial_features = ['poi', 'salary']
 print "Additional Features:", len(additional_features)
 
 #  initiating automatic feature search
-
+'''
 final_features_SVC = auto_feature(SVC(),
                                  my_dataset, additional_features, initial_features, iterate=2)
-'''
 final_features_NB = auto_feature(GaussianNB(),
                                  my_dataset, additional_features, initial_features, iterate=2)
 final_features_FR = auto_feature(RandomForestClassifier(),

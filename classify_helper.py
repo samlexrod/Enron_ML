@@ -88,7 +88,11 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
         print "\n-> Starting {} out of {}, {} folds focusing on {}...".format(i+1, iterate, folds, max_eval_foc)
         t = time()
         for j in range(len(aditional_features)+1):
-            print "--> Testing {} out of {} predictor features".format(j+1, len(aditional_features)+1)
+            print "--> Testing {} out of {} predictor features" \
+                  "\n\tTesting on {}".format(j+1, len(aditional_features)+1, testing_features)
+
+            if j == 23:
+                pass
 
             use_idx = j + remove_idx
 
@@ -158,6 +162,8 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
                 skip_feature = True
 
             if not skip_feature:
+                perform = 'increased'
+                target_feature = testing_features[len(testing_features)-1]
 
                 try:
                     total_predictions = true_negatives + false_negatives + false_positives + true_positives
@@ -166,8 +172,6 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
                     recall = 1.0*true_positives/(true_positives+false_negatives)
                     f1 = 2.0 * true_positives/(2*true_positives + false_positives+false_negatives)
                     f2 = (1+2.0*2.0) * precision*recall/(4*precision + recall)
-
-                    print "Evaluation metrics ok!"
 
                     if j <> 0:
                         max_accuracy = max(accuracy_tracker)
@@ -180,20 +184,39 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
                         pass
                     elif accuracy <= max_accuracy:
                         testing_features.remove(testing_features[use_idx])
+                        perform = 'decreased'
                         remove_idx -= 1
                     elif accuracy > max_accuracy:
                         if max_eval_foc.lower() == 'both':
                             if precision < max_precision or recall < max_recall:
                                 testing_features.remove(testing_features[use_idx])
+                                perform = 'decreased'
                                 remove_idx -= 1
                         elif max_eval_foc.lower() == 'prec':
                             if precision < max_precision or recall < .30:
                                 testing_features.remove(testing_features[use_idx])
+                                perform = 'decreased'
                                 remove_idx -= 1
                         elif max_eval_foc.lower() == 'reca':
                             if precision < .30 or recall < max_recall:
                                 testing_features.remove(testing_features[use_idx])
+                                perform = 'decreased'
                                 remove_idx -= 1
+
+                    if perform == 'decreased':
+                        outcome = 'removed'
+                    else:
+                        outcome = 'appended'
+
+                    print "\tEvaluation:" \
+                          "\n\tAdding {} {} performance. Feature will be {} for next test." \
+                          "\n\tAccuracy: {:0{dec}f}" \
+                          "\tPrecision: {:0{dec}f}" \
+                          "\tRecall: {:0{dec}f}" \
+                          "\tf1: {:0{dec}f}" \
+                          "\tf2: {:0{dec}f}" \
+                        .format(target_feature, perform, outcome,
+                                accuracy, precision, recall, f1, f2, dec=2)
 
                     # tracking progress
                     accuracy_tracker.append(round(accuracy, 2))
