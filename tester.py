@@ -31,8 +31,10 @@ PERF_FORMAT_STRING = "\
 Recall: {:>0.{display_precision}f}\tF1: {:>0.{display_precision}f}\tF2: {:>0.{display_precision}f}"
 RESULTS_FORMAT_STRING = "\tTotal predictions: {:4d}\tTrue positives: {:4d}\tFalse positives: {:4d}\
 \tFalse negatives: {:4d}\tTrue negatives: {:4d}"
+from time import time
 
 def test_classifier(clf, dataset, feature_list, folds=1000, returns=None):
+    t = time()
     data = featureFormat(dataset, feature_list, sort_keys = True)
     data = feature_scaling(clf, data)
     labels, features = targetFeatureSplit(data)
@@ -91,6 +93,10 @@ def test_classifier(clf, dataset, feature_list, folds=1000, returns=None):
         print PERF_FORMAT_STRING.format(accuracy, precision, recall, f1, f2, display_precision = 5)
         print RESULTS_FORMAT_STRING.format(total_predictions, true_positives, false_positives, false_negatives, true_negatives)
         print ""
+
+        print "\tFeatures Used in Classifier Tester:\n " \
+              "\t{}" \
+            .format(feature_list)
     except:
         print "Got a divide by zero when trying out:", clf
         print "Precision or recall may be undefined due to a lack of true positive predicitons."

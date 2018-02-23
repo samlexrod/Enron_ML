@@ -224,10 +224,8 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
                                          'precision': precision,
                                          'recall': recall,
                                          'features': testing_features}})
-        print "\tFeatures Used in Final Test:\n " \
-              "\t{}" \
-              "\n\tProcessed in {:0.0f} minute(s) and {:0.0f} second(s)"\
-            .format(testing_features, min_sec(time(), t)[0], min_sec(time(), t)[1])
+        print "\tProcessed in {:0.0f} minute(s) and {:0.0f} second(s)"\
+            .format(min_sec(time(), t)[0], min_sec(time(), t)[1])
 
         print "\tAccuracy Tracker {}" \
               "\n\tPrecision Tracker: {}" \
