@@ -1,3 +1,4 @@
+import pandas as pd
 
 # the function wil calculate the sum of all stated features
 # the features to sum should go under the feat_sum_list with this format: [a, b, c, ...]
@@ -62,32 +63,38 @@ def feat_ratio(data, features_lists, feature_names):
 # the function will explore total number of data points, allocation of pois, total features,
 # and missing values of given features
 # features should be entered in this format: [a, b, c, ...]
-def data_explore(data, features):
+def data_explore(dataset):
+
     print "\nData Exploration:"
-    import pandas as pd
     nan_dict = {}
+    features = dataset.values()[0].keys()
+
+    data_points = len(dataset.keys())
+    poi_number = sum([1 for name in dataset.keys() if dataset[name]['poi']])
+    poi_alloca = sum([1.0 for value in dataset.values() if value['poi']]) / len(dataset.keys())
+    total_feat = len(dataset[dataset.keys()[0]])
 
     # regular statistics
-    print "Total Number of Data Points:", len(data.keys())
-    print "Allocation of POI Accross Dataset:", \
-        "{:0.2f}%".format(sum([1.0 for value in data.values()
-                                  if value['poi'] == True]) / len(data.keys())*100)
-    print "Total Features:", len(data[data.keys()[0]])
+    print "Total Number of Data Points: {}" \
+          "\nTotal Number of POI: {}" \
+          "\nAllocation of POI Across Dataset: {:0.2%}" \
+          "\nTotal Features: {}"\
+        .format(data_points, poi_number, poi_alloca, total_feat)
 
     # missing value calculations
     for feature in features:
-        nan_dict[feature] = len([feat_val[feature] for feat_val in data.values()
+        nan_dict[feature] = len([feat_val[feature] for feat_val in dataset.values()
                                  if feat_val[feature] == 'NaN'])
 
     #
-    many_missing = [1 for value in nan_dict.values() if value > len(data.keys())*.20]
+    many_missing = [1 for value in nan_dict.values() if value > len(dataset.keys())*.20]
 
     print "There are", sum(many_missing), "features with at least 20% of missing values."
 
     nan_dict_frame = {}
     nan_dict_frame['features'] = nan_dict.keys()
     nan_dict_frame['miss_values'] = nan_dict.values()
-    nan_dict_frame['percentage'] = ["{:0.2f}".format(float(value)/len(data.keys())*100)
+    nan_dict_frame['percentage'] = ["{:0.2f}".format(float(value)/len(dataset.keys())*100)
                                     for value in nan_dict.values()]
 
     nan_dict_frame = pd.DataFrame(nan_dict_frame)
@@ -107,15 +114,12 @@ def nan_handler(my_dataset):
                 my_dataset[name][feature] = 0.
     return my_dataset
 
-
-
-
 # the feature prints the data as it was before or after new features
 # it is just to have a cleaner code in the machine_learning_udacity script
-def data_print(data, after=True):
+def data_print(data, after_feat=True):
     from pprint import pprint
 
-    if after:
+    if after_feat:
         print '\nData Structure After Feature Addition:'
         pprint(data.values()[0])
         print '-'*50
@@ -123,6 +127,3 @@ def data_print(data, after=True):
         print '\nData Structure Before Feature Addition:'
         pprint(data.values()[0])
         print '-'*50
-
-
-

@@ -3,8 +3,8 @@
 # imports
 import sys
 import pickle
-from outlier_manage import outlier_dict, pop_selected
-from tester import dump_classifier_and_data, test_classifier
+from outlier_manage import outlier_dict, pop_selected, find_non_nan
+from my_tester import my_dump_classifier_and_data, my_test_classifier
 from sklearn.naive_bayes import GaussianNB
 from feature_helper import feat_sum, feat_ratio, data_explore, data_print, nan_handler
 from sklearn.svm import SVC
@@ -29,17 +29,22 @@ with open("final_project_dataset.pkl", "r") as data_file:
 # determining outliers
 # quantitative features with outlier values
 # analyze the outliers
-features_available = data_dict.items()[0][1].keys()
-outlier_dict(features_available, data_dict)
+outlier_dict(data_dict)
+
+# data exploration before outlier removal
+data_explore(data_dict)
 
 # delete outliers
 pop_list = ['TOTAL']
+pop_selected(data_dict, pop_list)
 
-pop_selected(pop_list, features_available, data_dict)
+find_non_nan(data_dict, pop=True)
 
 # CREATING NEW FEATURES
 # *********************
-data_print(data_dict, after=False)
+# it prints a dictionary of features
+# and its value
+data_print(data_dict, after_feat=False)
 
 financial_features = ['salary', 'deferral_payments', 'total_payments', 'loan_advances',
                       'bonus', 'restricted_stock_deferred', 'deferred_income', 'total_stock_value',
@@ -55,8 +60,9 @@ feat_sum(data_dict, 'total_compensation', financial_features)
 ratio_financial_features = [['salary', 'total_compensation_abs']]
 feat_ratio(data_dict, ratio_financial_features, ['salary_impact'])
 
-# validating additional feature(s)
-data_print(data_dict, after=True)
+# it prints the dictionary of features and its values
+# after addition of custom features to validate
+data_print(data_dict, after_feat=True)
 
 
 # EXPLORING, HANDLING NULLS, AND STORING DATA
@@ -64,14 +70,13 @@ data_print(data_dict, after=True)
 #  Store to my_dataset for easy export below.
 my_dataset = data_dict
 
-all_features = my_dataset.values()[0].keys()
-
-data_explore(my_dataset, all_features)
+# data exploration after outlier removal and
+# addition of custom features
+data_explore(my_dataset)
 
 #  Converting null to zero value
 #nan_handler(my_dataset)
-
-data_explore(my_dataset, all_features)
+#data_explore(my_dataset)
 
 
 # AUTOMATICALLY LOOK FOR FEATURES AND SELECT CLASSIFIER
@@ -120,7 +125,7 @@ clf_best_estimator = classify_tuner(clf_def, my_dataset, optimal_features,
 # *****************
 #   testing classifier with suggested parameters
 print "\n-> Testing Classifier with New Parameters..."
-test_classifier(clf_best_estimator, my_dataset, optimal_features)
+my_test_classifier(clf_best_estimator, my_dataset, optimal_features)
 
 #   optimizing features of tuned classifier
 print "\tContinue folding and optimizing features with new parameters focusing on maximizing recall:"
@@ -129,7 +134,7 @@ optimal_features_tune = auto_feature(clf_best_estimator, my_dataset, additional_
 
 #   testing classifier with suggested parameters and newly optimal features
 print "\n-> Testing Classifier with New Parameters..."
-test_classifier(clf_best_estimator, my_dataset, optimal_features_tune) # parameter fails the test
+my_test_classifier(clf_best_estimator, my_dataset, optimal_features_tune) # parameter fails the test
 
 # DUMPING
 # *******
@@ -138,6 +143,6 @@ clf_dump = DecisionTreeClassifier() # default parameters are selected
 # getting optimal averages
 avg_eval_metrics(clf_dump, my_dataset, optimal_features, sampling_size=30)
 
-dump_classifier_and_data(clf_dump, my_dataset, optimal_features)
+my_dump_classifier_and_data(clf_dump, my_dataset, optimal_features)
 
 

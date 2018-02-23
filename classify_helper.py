@@ -4,7 +4,7 @@ from math import floor
 from pprint import pprint
 from sklearn.model_selection import GridSearchCV
 from sklearn.cross_validation import StratifiedShuffleSplit
-from tester import test_classifier
+from my_tester import my_test_classifier
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 
@@ -30,7 +30,7 @@ def classify_tuner(clf, dataset, optimal_features, parameters={}, tune_size=1):
     # testing classifier before tuning
     print "\n-> Test before tuning:"
     features_train, features_test, labels_train, labels_test = \
-        test_classifier(clf, dataset, optimal_features, returns='feat')
+        my_test_classifier(clf, dataset, optimal_features, returns='feat')
 
     clf = GridSearchCV(clf, parameters)
 
@@ -49,7 +49,7 @@ def classify_tuner(clf, dataset, optimal_features, parameters={}, tune_size=1):
         "{:.0f} minute(s) and {:0.0f} second(s)".format(train_time[0], train_time[1])
 
     print "\n-> Test after tuning..."
-    test_classifier(clf.best_estimator_, dataset, optimal_features)
+    my_test_classifier(clf.best_estimator_, dataset, optimal_features)
     print "-" * 50
 
     return clf.best_estimator_
@@ -218,7 +218,7 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
                 testing_features = initial_features
 
         print "---> Final test gathering and collecting test {} evaluation metrics:".format(i+1)
-        accuracy, precision, recall = test_classifier(clf, dataset, testing_features, returns='eval')
+        accuracy, precision, recall = my_test_classifier(clf, dataset, testing_features, returns='eval')
         test = "test_num{}".format(i+1)
         feature_test_dict.update({test: {'accuracy': accuracy,
                                          'precision': precision,
@@ -341,7 +341,7 @@ def avg_eval_metrics(clf, dataset, optimal_features, folds=1000, sampling_size=3
     samp_recall_avg = np.mean(samp_recall_avg_track)
 
     print "\n-> Final Test..."
-    test_classifier(clf, dataset, optimal_features)
+    my_test_classifier(clf, dataset, optimal_features)
     AVERAGE_MESSAGE = "{}\n\tSampling Size: {:0.0f}" \
                       "\tSampling Accuracy Average: {:0.{dec}f}" \
                       "\tSampling Precision Average: {:0.{dec}f}" \

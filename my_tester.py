@@ -33,7 +33,7 @@ RESULTS_FORMAT_STRING = "\tTotal predictions: {:4d}\tTrue positives: {:4d}\tFals
 \tFalse negatives: {:4d}\tTrue negatives: {:4d}"
 from time import time
 
-def test_classifier(clf, dataset, feature_list, folds=1000, returns=None):
+def my_test_classifier(clf, dataset, feature_list, folds=1000, returns=None):
     t = time()
     data = featureFormat(dataset, feature_list, sort_keys = True)
     data = feature_scaling(clf, data)
@@ -112,7 +112,7 @@ CLF_PICKLE_FILENAME = "my_classifier.pkl"
 DATASET_PICKLE_FILENAME = "my_dataset.pkl"
 FEATURE_LIST_FILENAME = "my_feature_list.pkl"
 
-def dump_classifier_and_data(clf, dataset, feature_list):
+def my_dump_classifier_and_data(clf, dataset, feature_list):
     with open(CLF_PICKLE_FILENAME, "w") as clf_outfile:
         pickle.dump(clf, clf_outfile)
     with open(DATASET_PICKLE_FILENAME, "w") as dataset_outfile:
