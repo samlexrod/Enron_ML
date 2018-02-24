@@ -73,20 +73,44 @@ RESULTS_FORMAT_STRING = "\tTotal predictions: {:4d}\tTrue positives: {:4d}\tFals
 
 def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000, iterate=5, max_eval_foc='both'):
 
+    '''
+    Conditions of test:
+    Accuracy >= .80
+    Precision >= .30
+    Recall >= .30
+
+    :param clf: This is the ML model selected.
+    :param dataset: This is the dataset gathered.
+    :param aditional_features: This are the features to be tested on a one-on-one basis and evaluated for
+        performance.
+    :param initial_features: This are the first features to be tested.
+    :param folds: This is the number of randomized indexes used for the StratifiedShuffleSplit.
+        The higher the number the more predictions are store and increases the chance of randomization.
+    :param iterate: This is the number of times the best feature-finding test will be repeated.
+        A dictionary of evaluation metrics and relative best features is created and then compared
+        to find the optimal iteration.
+    :param max_eval_foc: This is the focus of the evaluation metrics conditions:
+        'both' focus on both, precision and recall.
+        'reca' focus only on recall while maintaining precision above .30
+        'prec' focus on ly on precision while maintaining recall above .30
+        All focuses also maximize accuracy.
+    :return: It returns the best features that meet the maximizing evaluation metric rule
+    '''
+
+    # initiating the dictionary for the iterative tests
+    # it will hold the test number, accuracy, precision,
+    # recall, and best parameters
     feature_test_dict = {}
+
+    # if the test meet the conditions stated:    #
     return_initial = False
 
     classifier_name = str(clf)[:str(clf).find("(")]
 
+    # TEST LEVEL
+    # starting the number of
+    # test stated in the parameters
     for i in range(iterate):
-
-        # break if initial_features condition is not met
-        # it should be two features
-        '''
-        if len(initial_features) <> 2:
-            print "There should be only two initial features"
-            break
-        '''
 
         testing_features  = [feature for feature in initial_features]
         accuracy_tracker  = []
@@ -94,34 +118,43 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
         recall_tracker    = []
         remove_idx = 1
 
-        # STRATIFIED TEST
-        # Extracting and Stratifying Data
+        # prints the name of the classifier
+        # it also prints the progress of the test
         print "\nTesting on {}: " \
               "\n-> Starting {} out of {}, {} folds focusing on {}..."\
             .format(classifier_name, i+1, iterate, folds, max_eval_foc)
+
+
+        # FEATURE LEVEL
+        # starting the test of features
+        # the first one is the one with initial features
+        # the next ones are one by one comparing the best scores with the next
+
         t = time()
         for j in range(len(aditional_features)+1):
+
+            # prints the progress of the features and the features being tested
             print "--> Testing {} out of {} predictor features" \
                   "\n\tTesting on {}".format(j+1, len(aditional_features)+1, testing_features)
 
+            # index to remove bad features
+            # adjusted to iteration
+            # to ensure the last feature
+            # gets removed
             use_idx = j + remove_idx
 
             # allow evaluation calculations
             # only if there is not too many missing cases
+            # which is handle by the try error handling
             skip_feature = False
 
-            # extracting data
+            # extracting data and formatting the data
             data = featureFormat(dataset, testing_features, sort_keys=True)
             data = feature_scaling(clf, data)
             labels, features = targetFeatureSplit(data)
 
-            # debug
-            pass
-            if j == len(aditional_features)-1:
-                pass
-            if testing_features[1] == 'total_compensation_abs':
-                pass
-
+            # on error handling, it fits the data and folds to create more predictions
+            # if there is an error in the process, the feature is removed
             try:
                 cv = StratifiedShuffleSplit(labels, folds, random_state=42)
 
@@ -166,15 +199,25 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
                             print "{} is not valid. Prediction should be classified as 0 or 1"
 
             except:
-                print "Too much missing data using just {}.".format(testing_features)
+                print "Error using {}. The feature will be removed from test.".format(testing_features)
                 testing_features.remove(testing_features[use_idx])
                 remove_idx -= 1
+
+                # prevent the test
+                # from continuing
                 skip_feature = True
 
+            # if there is no errors on the process above,
+            # it calculates the evaluation metrics
             if not skip_feature:
+
+                # parameters for console messages
                 perform = 'increased'
                 target_feature = testing_features[len(testing_features)-1]
 
+                # on error handling, it calculates the evaluation metrics
+                # if there is an error when creating the evaluation metrics,
+                # the feature is removed
                 try:
                     total_predictions = true_negatives + false_negatives + false_positives + true_positives
                     accuracy = 1.0*(true_positives + true_negatives)/total_predictions
@@ -183,13 +226,17 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
                     f1 = 2.0 * true_positives/(2*true_positives + false_positives+false_negatives)
                     f2 = (1+2.0*2.0) * precision*recall/(4*precision + recall)
 
+                    # if this is not the first test,
+                    # then start tracking the maximum values
                     if j <> 0:
                         max_accuracy = max(accuracy_tracker)
                         max_precision = max(precision_tracker)
                         max_recall = max(recall_tracker)
 
-                    # MAXIMUN ACCURACY AND EVALUATION FOCUS
-                    # max_eval_foc
+                    # MAXIMUM ACCURACY AND EVALUATION FOCUS
+                    # here is where the magic happens,
+                    # features are removed if they do not beat
+                    # the max values above depending on the focus of the test
                     if j == 0:
                         pass
                     elif accuracy <= max_accuracy:
@@ -213,11 +260,13 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
                                 perform = 'decreased'
                                 remove_idx -= 1
 
+                    # parameters for console messages
                     if perform == 'decreased':
                         outcome = 'removed'
                     else:
                         outcome = 'appended'
 
+                    # console message including evaluation metrics at the feature level
                     print "\tEvaluation:" \
                           "\n\tAdding {} {} performance. Feature will be {} for next test." \
                           "\n\tAccuracy: {:0{dec}f}" \
@@ -228,7 +277,7 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
                         .format(target_feature, perform, outcome,
                                 accuracy, precision, recall, f1, f2, dec=2)
 
-                    # tracking progress
+                    # tracking progress to later calculate the maximum values
                     accuracy_tracker.append(round(accuracy, 2))
                     precision_tracker.append(round(precision, 2))
                     recall_tracker.append(round(recall, 2))
@@ -243,23 +292,38 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
                     testing_features.remove(testing_features[use_idx])
                     remove_idx -= 1
 
-            # add next feature
+
+            # if the feature is not the last,
+            # it counties to append the following features
+            # if all predictor features are removed
+            # it reinstates initial features sets to return them
             if j <> len(aditional_features):
                 testing_features.append(aditional_features[j])
             elif len(testing_features) == 1:
                 return_initial = True
                 testing_features = initial_features
 
+
         print "---> Final test gathering and collecting test {} evaluation metrics:".format(i+1)
+        # on the test level, it provides with an example test and gathers evaluation metric tracker
+        # and max values
+
+        # this test gathers the new scores at test level with best parameters per test
         accuracy, precision, recall = my_test_classifier(clf, dataset, testing_features, returns='eval')
+
+        # stores test level evaluation metrics
+        # and best features in a dictionary
         test = "test_num{}".format(i+1)
         feature_test_dict.update({test: {'accuracy': accuracy,
                                          'precision': precision,
                                          'recall': recall,
                                          'features': testing_features}})
+
+        # tracks the time of the test(s)
         print "\tProcessed in {:0.0f} minute(s) and {:0.0f} second(s)"\
             .format(min_sec(time(), t)[0], min_sec(time(), t)[1])
 
+        # console printing the trackers and max values
         print "\tAccuracy Tracker {}" \
               "\n\tPrecision Tracker: {}" \
               "\n\tMax Precision: {}" \
@@ -267,11 +331,14 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
               "\n\tMax Recall: {}".format(accuracy_tracker, precision_tracker, max(precision_tracker),
                                           recall_tracker, max(recall_tracker))
 
-    test_accuracy_list = [feature_test_dict[name]['accuracy'] for name in feature_test_dict.keys()]
 
+    # extract a list of accuracies from the dictionary of tests
+    test_accuracy_list = [feature_test_dict[test_num]['accuracy'] for test_num in feature_test_dict.keys()]
+
+    # gets the maximum test accuracy
     max_test_accuracy = max(test_accuracy_list)
 
-
+    # gets the features with the best maximum accuracy that meets the .30 precision and recall rule
     best_features = [feature_test_dict[name]['features'] for name in feature_test_dict.keys()
                      if feature_test_dict[name]['accuracy'] == max_test_accuracy
                      and feature_test_dict[name]['precision'] >= .30
@@ -279,8 +346,11 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
                      and feature_test_dict[name]['recall'] <> 'NaN'
                      and feature_test_dict[name]['recall'] >= .30]
 
+    # it takes out the list of best features from the list
     if best_features <> []: best_features = best_features[0]
 
+    # if no best features are found,
+    # it returns the initial features
     if best_features <> []:
         # best features
         print "\nOptimal Features Returned"

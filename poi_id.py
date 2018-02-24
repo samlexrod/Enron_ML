@@ -34,11 +34,20 @@ outlier_dict(data_dict)
 # data exploration before outlier removal
 data_explore(data_dict)
 
+# print and investigate all names
+print "Investigating Names:"
+for name in data_dict.keys():
+    print name
+
 # delete outliers
-pop_list = ['TOTAL']
+pop_list = ['TOTAL', 'THE TRAVEL AGENCY IN THE PARK']
 pop_selected(data_dict, pop_list)
 
+# finds and removes keys with all nan values
 find_non_nan(data_dict, pop=True)
+
+
+
 
 # CREATING NEW FEATURES
 # *********************
