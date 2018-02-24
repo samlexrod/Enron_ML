@@ -69,7 +69,3 @@ def find_non_nan(dataset, pop=False):
             if pop:
                 print "{} will be removed from the dataset.".format(name)
                 pop_selected(dataset, [name])
-
-    
-  
-        

@@ -60,6 +60,7 @@ feat_sum(data_dict, 'total_compensation', financial_features)
 ratio_financial_features = [['salary', 'total_compensation_abs']]
 feat_ratio(data_dict, ratio_financial_features, ['salary_impact'])
 
+
 # it prints the dictionary of features and its values
 # after addition of custom features to validate
 data_print(data_dict, after_feat=True)
@@ -88,8 +89,6 @@ additional_features.remove('poi')
 additional_features.remove('email_address')
 initial_features = ['poi', 'salary']
 
-print "Additional Features:", len(additional_features)
-
 #  initiating automatic feature search
 '''
 final_features_SVC = auto_feature(SVC(),
@@ -99,7 +98,6 @@ final_features_NB = auto_feature(GaussianNB(),
 final_features_FR = auto_feature(RandomForestClassifier(),
                                  my_dataset, additional_features, initial_features, iterate=1)
                                  '''
-
 
 # OPTIMIZING SELECTED CLASSIFIER
 # ******************************
@@ -112,6 +110,7 @@ optimal_features = auto_feature(clf_def, my_dataset, additional_features, initia
 # TUNE SELECTED CLASSIFIER
 # *************************
 #   tuning the classifier using optimal features
+print range(1, 60, 2)
 
 parameters_DT = {'criterion': ['gini', 'entropy'], 'min_samples_split': range(2, 50, 2),
                  'splitter': ['best', 'random'], 'max_depth': [None, 1, 100],
@@ -135,9 +134,16 @@ optimal_features_tune = auto_feature(clf_best_estimator, my_dataset, additional_
 print "\n-> Testing Classifier with New Parameters..."
 my_test_classifier(clf_best_estimator, my_dataset, optimal_features_tune) # parameter fails the test
 
-# DUMPING
+# FINAL ALGORITHM
 # *******
 clf_dump = DecisionTreeClassifier() # default parameters are selected
+
+new_features = ['from_message_impact', 'to_messages_impact', 'total_compensation_abs']
+
+# Testing Strength of New Features
+print "\nTesting performance of new features"
+auto_feature(clf_dump, my_dataset, new_features, optimal_features, iterate=1)
+
 
 # getting optimal averages
 avg_eval_metrics(clf_dump, my_dataset, optimal_features, sampling_size=30)

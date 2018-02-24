@@ -69,13 +69,17 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
     feature_test_dict = {}
     return_initial = False
 
+    classifier_name = str(clf)[:str(clf).find("(")]
+
     for i in range(iterate):
 
         # break if initial_features condition is not met
         # it should be two features
+        '''
         if len(initial_features) <> 2:
             print "There should be only two initial features"
             break
+        '''
 
         testing_features  = [feature for feature in initial_features]
         accuracy_tracker  = []
@@ -85,14 +89,13 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
 
         # STRATIFIED TEST
         # Extracting and Stratifying Data
-        print "\n-> Starting {} out of {}, {} folds focusing on {}...".format(i+1, iterate, folds, max_eval_foc)
+        print "\nTesting on {}: " \
+              "\n-> Starting {} out of {}, {} folds focusing on {}..."\
+            .format(classifier_name, i+1, iterate, folds, max_eval_foc)
         t = time()
         for j in range(len(aditional_features)+1):
             print "--> Testing {} out of {} predictor features" \
                   "\n\tTesting on {}".format(j+1, len(aditional_features)+1, testing_features)
-
-            if j == 23:
-                pass
 
             use_idx = j + remove_idx
 
@@ -288,6 +291,8 @@ def auto_feature(clf, dataset, aditional_features, initial_features, folds=1000,
         return testing_features
 
 def avg_eval_metrics(clf, dataset, optimal_features, folds=1000, sampling_size=30):
+
+    print "\n :) Starting sampling of {} test(s) to get the sampling averages...".format(sampling_size)
 
     samp_accuracy_avg_track = []
     samp_precision_avg_track = []
