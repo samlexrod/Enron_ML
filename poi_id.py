@@ -136,18 +136,18 @@ my_test_classifier(clf_best_estimator, my_dataset, optimal_features_tune) # para
 
 # FINAL ALGORITHM
 # *******
-clf_dump = DecisionTreeClassifier() # default parameters are selected
+clf = DecisionTreeClassifier() # default parameters are selected
 
 new_features = ['from_message_impact', 'to_messages_impact', 'total_compensation_abs']
 
 # Testing Strength of New Features
-print "\nTesting performance of new features"
-auto_feature(clf_dump, my_dataset, new_features, optimal_features, iterate=1)
+print "\nTesting performance of new features..."
+auto_feature(clf, my_dataset, new_features, optimal_features, iterate=1)
 
 
 # getting optimal averages
-avg_eval_metrics(clf_dump, my_dataset, optimal_features, sampling_size=30)
+avg_eval_metrics(clf, my_dataset, optimal_features, sampling_size=30)
 
-my_dump_classifier_and_data(clf_dump, my_dataset, optimal_features)
+my_dump_classifier_and_data(clf, my_dataset, optimal_features)
 
 

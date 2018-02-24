@@ -27,20 +27,27 @@ def feature_scaling(classifier, data):
 
 def classify_tuner(clf, dataset, optimal_features, parameters={}, tune_size=1):
 
+    '''
     # testing classifier before tuning
     print "\n-> Test before tuning:"
     features_train, features_test, labels_train, labels_test = \
         my_test_classifier(clf, dataset, optimal_features, returns='feat')
+        '''
+
+    data = featureFormat(dataset, optimal_features, sort_keys=True)
+    labels, features = targetFeatureSplit(data)
 
     clf = GridSearchCV(clf, parameters)
 
+    '''
     # Tune Size of Training
     features_train = features_train[:int(len(features_train)*tune_size)]
     labels_train = labels_train[:int(len(labels_train)*tune_size)]
+    '''
 
     print "-> Finding best parameters..."
     t = time()
-    clf.fit(features_train, labels_train)
+    clf.fit(features, labels)
     train_time = min_sec(time(), t)
 
     print "Best parameters are:"
