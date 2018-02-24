@@ -148,6 +148,12 @@ auto_feature(clf, my_dataset, new_features, optimal_features, iterate=1)
 # getting optimal averages
 avg_eval_metrics(clf, my_dataset, optimal_features, sampling_size=30)
 
-my_dump_classifier_and_data(clf, my_dataset, optimal_features)
+
+features_list = optimal_features
+my_dump_classifier_and_data(clf, my_dataset, features_list)
+
+from tester import test_classifier
+
+test_classifier(clf, my_dataset, features_list)
 
 
