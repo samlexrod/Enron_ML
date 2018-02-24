@@ -46,9 +46,6 @@ pop_selected(data_dict, pop_list)
 # finds and removes keys with all nan values
 find_non_nan(data_dict, pop=True)
 
-
-
-
 # CREATING NEW FEATURES
 # *********************
 # it prints a dictionary of features
@@ -87,7 +84,6 @@ data_explore(my_dataset)
 #  Converting null to zero value
 #nan_handler(my_dataset)
 #data_explore(my_dataset)
-
 
 # AUTOMATICALLY LOOK FOR FEATURES AND SELECT CLASSIFIER
 # *****************************************************
