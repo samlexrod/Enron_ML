@@ -450,7 +450,7 @@ def avg_eval_metrics(clf, dataset, optimal_features, folds=1000, sampling_size=3
     AVERAGE_MESSAGE = "{}\n\tSampling Size: {:0.0f}" \
                       "\tSampling Accuracy Average: {:0.{dec}f}" \
                       "\tSampling Precision Average: {:0.{dec}f}" \
-                      "\tSampling Recall Average: {:0.{dec}f}"
+                      "\tSampling Recall Average: {:0.{dec}f}\n"
 
     print AVERAGE_MESSAGE.format("*"*60,sampling_size, samp_accuracy_avg,
                                   samp_precision_avg, samp_recall_avg, dec=2)

@@ -66,39 +66,49 @@ def feat_ratio(data, features_lists, feature_names):
 def data_explore(dataset):
 
     print "\nData Exploration:"
+
+    # dictionary of NaN values
     nan_dict = {}
+
+    # extract only features
     features = dataset.values()[0].keys()
 
+    # get dataset descriptive statistics
     data_points = len(dataset.keys())
     poi_number = sum([1 for name in dataset.keys() if dataset[name]['poi']])
     poi_alloca = sum([1.0 for value in dataset.values() if value['poi']]) / len(dataset.keys())
     total_feat = len(dataset[dataset.keys()[0]])
 
-    # regular statistics
+    # console message of descriptive statistics
     print "Total Number of Data Points: {}" \
           "\nTotal Number of POI: {}" \
           "\nAllocation of POI Across Dataset: {:0.2%}" \
           "\nTotal Features: {}"\
         .format(data_points, poi_number, poi_alloca, total_feat)
 
-    # missing value calculations
+    # finding null values or missing values
+    # this process will append the length of found NaN values for each feature
     for feature in features:
         nan_dict[feature] = len([feat_val[feature] for feat_val in dataset.values()
                                  if feat_val[feature] == 'NaN'])
 
-    #
+    # calculate how many features have more than 20% of missing values
     many_missing = [1 for value in nan_dict.values() if value > len(dataset.keys())*.20]
 
+    # console message for missing values
     print "There are", sum(many_missing), "features with at least 20% of missing values."
 
+    # dictionary to create data frame
     nan_dict_frame = {}
     nan_dict_frame['features'] = nan_dict.keys()
     nan_dict_frame['miss_values'] = nan_dict.values()
     nan_dict_frame['percentage'] = ["{:0.2f}".format(float(value)/len(dataset.keys())*100)
                                     for value in nan_dict.values()]
 
+    # creating dataframe of dictionary
     nan_dict_frame = pd.DataFrame(nan_dict_frame)
 
+    # console table of missing values
     print nan_dict_frame.sort_values(['miss_values'], ascending=[False])
     print '-'*50
 

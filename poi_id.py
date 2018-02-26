@@ -104,6 +104,9 @@ final_features_FR = auto_feature(RandomForestClassifier(),
                                  my_dataset, additional_features, initial_features, iterate=1)
                                  '''
 
+final_features_NB = auto_feature(GaussianNB(),
+                                 my_dataset, additional_features, initial_features, iterate=2)
+
 # OPTIMIZING SELECTED CLASSIFIER
 # ******************************
 #   optimizing features in classifier using default parameters
